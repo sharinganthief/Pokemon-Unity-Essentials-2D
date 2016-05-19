@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="21" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="Paths and Grass" tilewidth="32" tileheight="32" tilecount="2048">
+  <image source="Tilesets/Paths and Grass.png" width="256" height="8192"/>
+ </tileset>
+ <tileset firstgid="2049" name="Buildings and Houses" tilewidth="32" tileheight="32" tilecount="2048">
+  <image source="Tilesets/Buildings and Houses.png" width="256" height="8192"/>
+ </tileset>
+ <tileset firstgid="4097" name="Trees" tilewidth="32" tileheight="32" tilecount="2048">
+  <image source="Tilesets/Trees.png" width="256" height="8192"/>
+ </tileset>
+ <tileset firstgid="6145" name="Water and Ledges" tilewidth="32" tileheight="32" tilecount="2048">
+  <image source="Tilesets/Water and Ledges.png" width="256" height="8192"/>
+ </tileset>
+ <tileset firstgid="8193" name="Sea" tilewidth="32" tileheight="32" tilecount="120">
+  <image source="Autotiles/Sea.png" width="768" height="160"/>
+  <tile id="48">
+   <animation>
+    <frame tileid="48" duration="100"/>
+    <frame tileid="51" duration="100"/>
+    <frame tileid="54" duration="100"/>
+    <frame tileid="57" duration="100"/>
+    <frame tileid="60" duration="100"/>
+    <frame tileid="63" duration="100"/>
+    <frame tileid="66" duration="100"/>
+    <frame tileid="69" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="49">
+   <animation>
+    <frame tileid="49" duration="100"/>
+    <frame tileid="52" duration="100"/>
+    <frame tileid="55" duration="100"/>
+    <frame tileid="58" duration="100"/>
+    <frame tileid="61" duration="100"/>
+    <frame tileid="64" duration="100"/>
+    <frame tileid="67" duration="100"/>
+    <frame tileid="70" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="50">
+   <animation>
+    <frame tileid="50" duration="100"/>
+    <frame tileid="53" duration="100"/>
+    <frame tileid="56" duration="100"/>
+    <frame tileid="59" duration="100"/>
+    <frame tileid="62" duration="100"/>
+    <frame tileid="65" duration="100"/>
+    <frame tileid="68" duration="100"/>
+    <frame tileid="71" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="72">
+   <animation>
+    <frame tileid="72" duration="100"/>
+    <frame tileid="75" duration="100"/>
+    <frame tileid="78" duration="100"/>
+    <frame tileid="81" duration="100"/>
+    <frame tileid="84" duration="100"/>
+    <frame tileid="87" duration="100"/>
+    <frame tileid="90" duration="100"/>
+    <frame tileid="93" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="73">
+   <animation>
+    <frame tileid="73" duration="100"/>
+    <frame tileid="76" duration="100"/>
+    <frame tileid="79" duration="100"/>
+    <frame tileid="82" duration="100"/>
+    <frame tileid="85" duration="100"/>
+    <frame tileid="88" duration="100"/>
+    <frame tileid="91" duration="100"/>
+    <frame tileid="94" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="74">
+   <animation>
+    <frame tileid="74" duration="100"/>
+    <frame tileid="77" duration="100"/>
+    <frame tileid="80" duration="100"/>
+    <frame tileid="83" duration="100"/>
+    <frame tileid="86" duration="100"/>
+    <frame tileid="89" duration="100"/>
+    <frame tileid="92" duration="100"/>
+    <frame tileid="95" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer name="Base Grass - 1" width="32" height="21">
+  <data encoding="base64" compression="zlib">
+   eJztzakRAAAIxMAbvv5L5qoAExETsyEpXbl24+LwXVr4+Pj4+Pj4+Pj//gLyRwpC
+  </data>
+ </layer>
+ <layer name="Paths - 1" width="32" height="21">
+  <data encoding="base64" compression="zlib">
+   eJztVUEOwiAQ5GpbbdqqSbVJk6bq/3/ociBZTdmBBbzYTebEMsPAAMboqiEclXNz1JlwKcBrfVUBeBGeoKdW6FtffSYMSv0T4ebBzPhRn1Zfmsf3B/Xt+jr9q5Fz7/RRX4z+YYP/l/nvIrml7GvyP5rP++Xjd+OIO+X8JX40/i/6UvY1+Q/ld/dDyl8LPIToI6yExYNHgv4k+OLeSv1/qMavNUjncC+gb4u/VSU8onJvVQ6Pb01lFVk=
+  </data>
+ </layer>
+ <layer name="Trees Bottom - 2" width="32" height="21">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhYwCjAwMAExMxAzALEgkAsRAQNA8SqJ2TOQAF0/480MNL9D0uHwkAsMgL9PwpGNhjp+X/U/6P+H8n+BwCGOQX4
+  </data>
+ </layer>
+ <layer name="House Bottom -2 " width="32" height="21">
+  <data encoding="base64" compression="zlib">
+   eJztzTkKgEAQRNFOxxW3+5/RBXfUb66gjBjVh5c1XWZKqaucMwsQIkLs/O7elvEnR4ES1c3fp3dKfVmdmDVo0aHHgDH5Z39iZ8aCFRv2czv9Z18p5dcBZREPPA==
+  </data>
+ </layer>
+ <layer name="Pond" width="32" height="21">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSgYfMBQgYHBCIqNFehvvyfQTi8o9h61n6oAAIoqBkE=
+  </data>
+ </layer>
+ <layer name="Player - 3" width="32" height="21">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20LL6AAAOBnCoAAAQ==
+  </data>
+ </layer>
+ <layer name="Trees Top - 4" width="32" height="21">
+  <data encoding="base64" compression="zlib">
+   eJzjFGBg4AJiThJpGCBVHy5zaAUYgXYwCWDSzEDMguQObiDmoYF70P0Ls4dW9qEDXP4e9f+o/1noYP+o//H7nxWI2ZBoagNC/ucFYj4kmtpgsMf/SM//o/4fXP6ntDxA10+q/ykND/TyhJD/AfXNFkg=
+  </data>
+ </layer>
+ <layer name="House Top - 4" width="32" height="21">
+  <data encoding="base64" compression="zlib">
+   eJztzdsKglAQRuGxA7hvfP9XU+mgUlpSmdpFauB6AUHZsJGYBd/dML+IttbevkiNBi0+vt3d0r786dBjwG/i79y7pXlGZIMtdtgbuzvtvwoDkQgxDjjihHPgZj9hJ0WGC67IUTjav7FzR4kHnnihcrSvaZpm0wg9gyhL
+  </data>
+ </layer>
+</map>

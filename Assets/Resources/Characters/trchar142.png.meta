@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: fc697f4752c9e6c46b6352ca94211d20
+timeCreated: 1463684981
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: trchar142_0
+    21300002: trchar142_1
+    21300004: trchar142_2
+    21300006: trchar142_3
+    21300008: trchar142_4
+    21300010: trchar142_5
+    21300012: trchar142_6
+    21300014: trchar142_7
+    21300016: trchar142_8
+    21300018: trchar142_9
+    21300020: trchar142_10
+    21300022: trchar142_11
+    21300024: trchar142_12
+    21300026: trchar142_13
+    21300028: trchar142_14
+    21300030: trchar142_15
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: trchar142_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 196
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 194
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_2
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 196
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_3
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 194
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 132
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 132
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 132
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_7
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 132
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 68
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_9
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 68
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_10
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 68
+        width: 36
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_11
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 68
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 4
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_13
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 2
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_14
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 4
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar142_15
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 2
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

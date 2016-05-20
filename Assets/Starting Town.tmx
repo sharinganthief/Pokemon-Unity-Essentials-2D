@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="21" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" name="Paths and Grass" tilewidth="32" tileheight="32" tilecount="2048">
-  <image source="Tilesets/Paths and Grass.png" width="256" height="8192"/>
+  <image source="Resources/Tilesets/Paths and Grass.png" width="256" height="8192"/>
  </tileset>
  <tileset firstgid="2049" name="Buildings and Houses" tilewidth="32" tileheight="32" tilecount="2048">
-  <image source="Tilesets/Buildings and Houses.png" width="256" height="8192"/>
+  <image source="Resources/Tilesets/Buildings and Houses.png" width="256" height="8192"/>
  </tileset>
  <tileset firstgid="4097" name="Trees" tilewidth="32" tileheight="32" tilecount="2048">
-  <image source="Tilesets/Trees.png" width="256" height="8192"/>
+  <image source="Resources/Tilesets/Trees.png" width="256" height="8192"/>
  </tileset>
  <tileset firstgid="6145" name="Water and Ledges" tilewidth="32" tileheight="32" tilecount="2048">
-  <image source="Tilesets/Water and Ledges.png" width="256" height="8192"/>
+  <image source="Resources/Tilesets/Water and Ledges.png" width="256" height="8192"/>
  </tileset>
  <tileset firstgid="8193" name="Sea" tilewidth="32" tileheight="32" tilecount="120">
-  <image source="Autotiles/Sea.png" width="768" height="160"/>
+  <image source="Resources/Autotiles/Sea.png" width="768" height="160"/>
   <tile id="48">
    <animation>
     <frame tileid="48" duration="100"/>
@@ -104,7 +104,7 @@
  </layer>
  <layer name="House Bottom -2 " width="32" height="21">
   <data encoding="base64" compression="zlib">
-   eJztzTkKgEAQRNFOxxW3+5/RBXfUb66gjBjVh5c1XWZKqaucMwsQIkLs/O7elvEnR4ES1c3fp3dKfVmdmDVo0aHHgDH5Z39iZ8aCFRv2czv9Z18p5dcBZREPPA==
+   eJztzrkJACAAQ9G0NorX/nN6oGYEwUKRPPhdigAi8iJvgMAiSyybs53IT4oFKmuss8Emg7v9TER2LOSRB2M=
   </data>
  </layer>
  <layer name="Pond" width="32" height="21">
@@ -124,7 +124,7 @@
  </layer>
  <layer name="House Top - 4" width="32" height="21">
   <data encoding="base64" compression="zlib">
-   eJztzdsKglAQRuGxA7hvfP9XU+mgUlpSmdpFauB6AUHZsJGYBd/dML+IttbevkiNBi0+vt3d0r786dBjwG/i79y7pXlGZIMtdtgbuzvtvwoDkQgxDjjihHPgZj9hJ0WGC67IUTjav7FzR4kHnnihcrSvaZpm0wg9gyhL
+   eJztzesKglAQReGpDDxpvv+rVVRadCfLS9kVWi8geDAOBbPg+zfMFtF+tcwXyVGgxMVvd2fbnT8PPPHCu+Zv0zvbOkakix489E27O9sMfwYIEGJY87fpnfbdRpHIGBNMMcMcceRmP2FngSVWWGODraP9HTt7HHBEihPOjvYzdnIUKHFFhZujfU3T/rsPvfQwJA==
   </data>
  </layer>
 </map>

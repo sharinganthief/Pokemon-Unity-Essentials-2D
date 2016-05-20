@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	Vector3 pos;                                // For movement
 	float speed = 1.0f;                         // Speed of movement
-	float distance = 0.25f;
+	float distance = 0.32f;
 	private Rigidbody2D rbody;
 	private Animator anim;
 	private SpriteRenderer sprite;

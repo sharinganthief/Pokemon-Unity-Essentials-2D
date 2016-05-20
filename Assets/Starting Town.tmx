@@ -5,6 +5,61 @@
  </tileset>
  <tileset firstgid="2049" name="Buildings and Houses" tilewidth="32" tileheight="32" tilecount="2048">
   <image source="Resources/Tilesets/Buildings and Houses.png" width="256" height="8192"/>
+  <tile id="24">
+   <objectgroup draworder="index">
+    <object id="0" x="2.72727" y="-0.181818" width="29.2727" height="31.8182"/>
+   </objectgroup>
+  </tile>
+  <tile id="25">
+   <objectgroup draworder="index">
+    <object id="0" x="0.181818" y="0" width="31.6364" height="31.6364"/>
+   </objectgroup>
+  </tile>
+  <tile id="26">
+   <objectgroup draworder="index">
+    <object id="0" x="0" y="-0.363636" width="31.6364" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="27">
+   <objectgroup draworder="index">
+    <object id="0" x="0.181818" y="0.181818" width="31.8182" height="31.6364"/>
+   </objectgroup>
+  </tile>
+  <tile id="28">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.181818" y="-0.363636" width="32" height="32"/>
+   </objectgroup>
+  </tile>
+  <tile id="264">
+   <objectgroup draworder="index">
+    <object id="0" x="2" y="-0.181818" width="29.8182" height="32.3636"/>
+   </objectgroup>
+  </tile>
+  <tile id="268">
+   <objectgroup draworder="index">
+    <object id="0" x="0.181818" y="0" width="31.2727" height="31.6364"/>
+   </objectgroup>
+  </tile>
+  <tile id="272">
+   <objectgroup draworder="index">
+    <object id="0" x="2.18182" y="0.181818" width="29.8182" height="31.2727"/>
+   </objectgroup>
+  </tile>
+  <tile id="274">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.181818" y="0.181818" width="32.1818" height="31.4545"/>
+   </objectgroup>
+  </tile>
+  <tile id="275">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.181818" y="0" width="32.3636" height="31.6364"/>
+   </objectgroup>
+  </tile>
+  <tile id="276">
+   <objectgroup draworder="index">
+    <object id="0" x="-0.181818" y="-0.181818" width="31.6364" height="32.1818"/>
+   </objectgroup>
+  </tile>
  </tileset>
  <tileset firstgid="4097" name="Trees" tilewidth="32" tileheight="32" tilecount="2048">
   <image source="Resources/Tilesets/Trees.png" width="256" height="8192"/>

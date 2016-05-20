@@ -45,8 +45,10 @@ public class PlayerMovement : MonoBehaviour {
 					upTime = 0.0f;
 					downTime = 0.0f;
 					if (leftTime > 0.1f ) {
-						pos += new Vector3(distance*-1, 0.0f, 0.0f);
-						anim.SetBool ("is_walking", true);
+						if (PassabilityCheck.canPass(rbody, new Vector2(distance*-1, 0.0f))){
+							pos += new Vector3(distance*-1, 0.0f, 0.0f);
+							anim.SetBool ("is_walking", true);
+						}
 					}
 					anim.SetFloat("input_x", -1);
 					anim.SetFloat("input_y", 0);
@@ -57,8 +59,10 @@ public class PlayerMovement : MonoBehaviour {
 					upTime = 0.0f;
 					downTime = 0.0f;
 					if ( rightTime > 0.1f ) {
-						pos += new Vector3(distance, 0.0f, 0.0f);
-						anim.SetBool ("is_walking", true);
+						if (PassabilityCheck.canPass(rbody, new Vector2(distance, 0.0f))){
+							pos += new Vector3(distance, 0.0f, 0.0f);
+							anim.SetBool ("is_walking", true);
+					  }
 					}
 					anim.SetFloat("input_x", 1);
 					anim.SetFloat("input_y", 0);
@@ -69,8 +73,10 @@ public class PlayerMovement : MonoBehaviour {
 					upTime += Time.deltaTime;
 					downTime = 0.0f;
 					if ( upTime > 0.1f ) {
-						pos += new Vector3(0.0f, distance, 0.0f);
-						anim.SetBool ("is_walking", true);
+						if (PassabilityCheck.canPass(rbody, new Vector2(0.0f, distance))){
+							pos += new Vector3(0.0f, distance, 0.0f);
+							anim.SetBool ("is_walking", true);
+						}
 					}
 					anim.SetFloat("input_x", 0);
 					anim.SetFloat("input_y", 1);
@@ -81,8 +87,10 @@ public class PlayerMovement : MonoBehaviour {
 					upTime = 0.0f;
 					downTime += Time.deltaTime;
 					if ( downTime > 0.1f ) {
-						pos += new Vector3(0.0f, distance*-1, 0.0f);
-						anim.SetBool ("is_walking", true);
+						if (PassabilityCheck.canPass(rbody, new Vector2(0.0f, distance*-1))){
+							pos += new Vector3(0.0f, distance*-1, 0.0f);
+							anim.SetBool ("is_walking", true);
+						}
 					}
 					anim.SetFloat("input_x", 0);
 					anim.SetFloat("input_y", -1);
@@ -119,4 +127,8 @@ public class PlayerMovement : MonoBehaviour {
 			anim.SetFloat("input_y", facing);
 		}
 	}
+
+
+
+
 }

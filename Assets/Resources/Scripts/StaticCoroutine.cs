@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 
 
- //credit to https://benbeagley.com/
+ //credit to https://benbeagley.com/ and http://answers.unity3d.com/users/21269/whydoidoit.html
 
 
 public class StaticCoroutine : MonoBehaviour {
@@ -41,10 +41,7 @@ public class StaticCoroutine : MonoBehaviour {
         Die();
     }
 
-    /// <summary>
-    /// Place your lovely static IEnumerator in here and witness magic!
-    /// </summary>
-    /// <param name="coroutine">Static IEnumerator</param>
+
     public static void DoCoroutine(IEnumerator coroutine)
     {
         instance.StartCoroutine(instance.Perform(coroutine)); //this will launch the coroutine on our instance

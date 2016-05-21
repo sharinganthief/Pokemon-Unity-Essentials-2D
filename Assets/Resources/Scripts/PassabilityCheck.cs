@@ -8,13 +8,12 @@ public class PassabilityCheck : MonoBehaviour {
 	}
 
 
-	public static bool canPass(Rigidbody2D player, Vector2 target){
+	public static bool canPass(Rigidbody2D player, Vector2 target, float distance){
 		bool ret = true;
-		RaycastHit2D hit = Physics2D.Raycast(player.transform.position, target);
-		if (hit.collider != null  && hit.distance<=0.32f){
+		RaycastHit2D hit = Physics2D.Raycast(player.transform.position, target, distance);
+		if (hit.collider != null){
 			ret = false;
 		}
-		Debug.Log(hit.distance);
 		return ret;
 	}
 

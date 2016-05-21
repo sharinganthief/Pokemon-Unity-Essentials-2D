@@ -18,7 +18,6 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 
 	void Start(){
 		controller = GetComponent<NPCController> ();
-		Debug.Log(sheetname);
 		sprites = Resources.LoadAll <Sprite> ("Characters/"+sheetname);
 
     sr = GetComponent<SpriteRenderer> ();

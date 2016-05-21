@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour {
 	float distance = 0.32f;
 	private Rigidbody2D rbody;
 	private Animator anim;
-	private SpriteRenderer sprite;
 	private float leftTime = 0.0f;
 	private float rightTime = 0.0f;
 	private float upTime = 0.0f;
@@ -22,7 +21,6 @@ public class PlayerMovement : MonoBehaviour {
 		pos = transform.position;          // Take the initial position
 		rbody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
-		sprite = GetComponent<SpriteRenderer> ();
 		updateFacing();
 	}
 
@@ -45,9 +43,12 @@ public class PlayerMovement : MonoBehaviour {
 					upTime = 0.0f;
 					downTime = 0.0f;
 					if (leftTime > 0.1f ) {
-						if (PassabilityCheck.canPass(rbody, new Vector2(distance*-1, 0.0f))){
+						if (PassabilityCheck.canPass(rbody, new Vector2(distance*-1, 0.0f), distance)){
 							pos += new Vector3(distance*-1, 0.0f, 0.0f);
 							anim.SetBool ("is_walking", true);
+						} else {
+							anim.SetBool ("is_walking", false);
+							AudioController.playSE("bump.mp3");
 						}
 					}
 					anim.SetFloat("input_x", -1);
@@ -59,10 +60,13 @@ public class PlayerMovement : MonoBehaviour {
 					upTime = 0.0f;
 					downTime = 0.0f;
 					if ( rightTime > 0.1f ) {
-						if (PassabilityCheck.canPass(rbody, new Vector2(distance, 0.0f))){
+						if (PassabilityCheck.canPass(rbody, new Vector2(distance, 0.0f), distance)){
 							pos += new Vector3(distance, 0.0f, 0.0f);
 							anim.SetBool ("is_walking", true);
-					  }
+					  } else {
+							anim.SetBool ("is_walking", false);
+							AudioController.playSE("bump.mp3");
+						}
 					}
 					anim.SetFloat("input_x", 1);
 					anim.SetFloat("input_y", 0);
@@ -73,9 +77,12 @@ public class PlayerMovement : MonoBehaviour {
 					upTime += Time.deltaTime;
 					downTime = 0.0f;
 					if ( upTime > 0.1f ) {
-						if (PassabilityCheck.canPass(rbody, new Vector2(0.0f, distance))){
+						if (PassabilityCheck.canPass(rbody, new Vector2(0.0f, distance), distance)){
 							pos += new Vector3(0.0f, distance, 0.0f);
 							anim.SetBool ("is_walking", true);
+						} else {
+							anim.SetBool ("is_walking", false);
+							AudioController.playSE("bump.mp3");
 						}
 					}
 					anim.SetFloat("input_x", 0);
@@ -87,9 +94,12 @@ public class PlayerMovement : MonoBehaviour {
 					upTime = 0.0f;
 					downTime += Time.deltaTime;
 					if ( downTime > 0.1f ) {
-						if (PassabilityCheck.canPass(rbody, new Vector2(0.0f, distance*-1))){
+						if (PassabilityCheck.canPass(rbody, new Vector2(0.0f, distance*-1), distance)){
 							pos += new Vector3(0.0f, distance*-1, 0.0f);
 							anim.SetBool ("is_walking", true);
+						} else {
+							anim.SetBool ("is_walking", false);
+							AudioController.playSE("bump.mp3");
 						}
 					}
 					anim.SetFloat("input_x", 0);

@@ -7,11 +7,11 @@ public class CameraFollow : MonoBehaviour {
   private Vector3 velocity = Vector3.zero;
   public Transform target;
 	public Vector3 offset;
-	private Camera camera;
+	private Camera mainCam;
 
 	void Start() {
-		camera = GetComponent<Camera> ();
-		camera.orthographicSize = 2;
+		mainCam = GetComponent<Camera> ();
+		mainCam.orthographicSize = 2;
 	}
 
   // Update is called once per frame
@@ -19,8 +19,8 @@ public class CameraFollow : MonoBehaviour {
   {
      if (target)
      {
-         Vector3 point = camera.WorldToViewportPoint(target.position);
-         Vector3 delta = target.position - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
+         Vector3 point = mainCam.WorldToViewportPoint(target.position);
+         Vector3 delta = target.position - mainCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
          Vector3 destination = transform.position + delta;
          transform.position = Vector3.SmoothDamp(transform.position, destination + offset, ref velocity, dampTime);
      }

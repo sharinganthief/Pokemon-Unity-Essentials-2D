@@ -58,14 +58,15 @@ public class AudioController : MonoBehaviour {
 	//coroutine to play audio
 	//path expected starting in Resources
 	//audioSEPathShort, filename
-	static IEnumerator playAudio(string path, string filename, float volume = 1.0f) {
+	static IEnumerator playAudio(string path, string filename, float volume = 1.0f, bool loop = false) {
 		tempObject = new GameObject ();
 		tempObject.AddComponent<AudioSource> ();
 		audioSource  = tempObject.GetComponent<AudioSource> ();
 		audioSource = tempObject.GetComponent<AudioSource>();
 		filename = System.IO.Path.GetFileNameWithoutExtension(filename);
-		audioSource.clip = Resources.Load(audioSEPathShort+filename, typeof(AudioClip)) as AudioClip;
+		audioSource.clip = Resources.Load(path+filename, typeof(AudioClip)) as AudioClip;
 		audioSource.volume = volume;
+		audioSource.loop = loop;
 		audioSource.Play();
 		yield return null;
 	}
@@ -98,6 +99,44 @@ public class AudioController : MonoBehaviour {
 				//Remove function used to remove the * character needed in searching directories
 				if (audioSEFiles.Exists(x => x.Name==(filename+(ext.Remove(0, 1))))){
 					StaticCoroutine.DoCoroutine(AudioController.playAudio(audioSEPathShort, filename, volume));
+					return;
+				}
+			}
+			Debug.Log("Audio file " + filename + " not found.  Ensure the file exists, and is an accepted file typed.");
+		}
+		else {
+			Debug.Log("Audio file " + filename + " not found.  Ensure you typed the correct extension");
+		}
+
+	}
+
+	public static void playBGM(string filename, float volume = 1.0f){
+		if (!listsCreated){
+			AudioController.createAudioList();
+		}
+		if (audioSource!=null && audioSource.isPlaying){
+			return;
+		} else {
+			Destroy(audioSource);
+			Destroy(tempObject);
+		}
+		if (volume<0.0f){
+			Debug.Log("Volume must be greater than or equal to 0.0");
+			volume = 1.0f;
+		} else if (volume>1.0f){
+			Debug.Log("Volume must be less than or equal to 1.0");
+			volume = 1.0f;
+		}
+		//check for the exact filename (with specified extension)
+		if (audioBGMFiles.Exists(x => x.Name==filename)){
+			StaticCoroutine.DoCoroutine(AudioController.playAudio(audioBGMPathShort, filename, volume, true));
+		}
+		//if the filename doesn't have an extension, check each extension
+		else if (filename == System.IO.Path.GetFileNameWithoutExtension(filename)) {
+			foreach (string ext in extensionsAllowed){
+				//Remove function used to remove the * character needed in searching directories
+				if (audioBGMFiles.Exists(x => x.Name==(filename+(ext.Remove(0, 1))))){
+					StaticCoroutine.DoCoroutine(AudioController.playAudio(audioBGMPathShort, filename, volume, true));
 					return;
 				}
 			}

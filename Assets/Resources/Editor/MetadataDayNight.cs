@@ -1,7 +1,7 @@
 //Make sure to place this script in a folder called "Editor"
 using UnityEditor;
 
-public class MyTools
+public class MetadataDayNight
 {
     [MenuItem("Metadata Tools/Add Day-Night Shader")]
     static void Create()

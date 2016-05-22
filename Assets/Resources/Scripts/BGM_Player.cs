@@ -5,9 +5,12 @@ public class BGM_Player : MonoBehaviour {
 
 
 	public AudioClip bgmSource;
+	public float volume;
 
-	[Range(0.0f,1.0f)]
-	public float volume = 1.0f;
+	public BGM_Player (AudioClip p_bgmSource, float p_volume){
+		bgmSource = p_bgmSource;
+		volume = p_volume;
+	}
 
 	void Start () {
 		AudioController.playBGM(bgmSource.name, volume);

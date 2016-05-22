@@ -50,7 +50,7 @@ public class DayNightShading : MonoBehaviour {
 		image.color = hourlyTones[hour];
 
 		//update day/night shading every 60 seconds (possibly change rate, idk)
-		InvokeRepeating("updateShading", 1.0f, 60.0f);
+		InvokeRepeating("updateShading", 0.0f, 60.0f);
 	}
 
 	// Update is called once per frame
@@ -61,11 +61,11 @@ public class DayNightShading : MonoBehaviour {
 
 	//stop the invoke repeating if object is destoryed
 	void OnDestroy(){
-		CancelInvoke();
+		CancelInvoke("updateShading");
 	}
 
 	//stop the invoke repeating if object is destoryed
 	void OnDisable(){
-		CancelInvoke();
+		CancelInvoke("updateShading");
 	}
 }

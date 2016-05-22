@@ -115,6 +115,10 @@ public class PlayerMovement : MonoBehaviour {
 					anim.SetBool ("is_walking", false);
 				}
 		 }
+
+		 if (Input.GetKey(KeyCode.Space)){
+			 //StaticCoroutine.DoCoroutine(AudioController.fadeOutCurrent());
+		 }
 	}
 
 	public void setTransferred(bool hasTransferred, int setDirection){

@@ -1,20 +1,37 @@
 # Pokemon-Unity-Essentials-2D
+
 An open source framework for making fangames
 
+Done:
+
+Player Movement (basic movement)
+
+Passability checks (basic check for colliders)
+
+General Audio functions (play/switch BGM, BGS, SE, and Cries)
+
+Day/Night Shader (need better shading colors)
+
+Grid based player movement
+
+NPC character animations (generated based on charset, no need for attatching animations.  Don't know if walking animations work yet, since NPCs can't walk)
+
+
 Things currently working on:
-Playing audio files (figure out how to handle fade-ins/outs for bgs, etc)
-Day/Night cycle
+Audio fade in/out capabilities
+
 
 Possible ideas:
-Handling metadata for maps (write an external editor that will edit an XML file.  XML file is based on the scenes in your project folder.  
-  These will be handled with a static class that reads them, and various other scripts will use this information [such as being indoors, for the day/night cycle)
+
+Make Metadata objects all sub-objects of Metadata (for better organization.  A singular Metadata gameobject is created with a click.  In it are all the metadata options.  Upon loading the scene, all the other objects are generated based on these settings)
+
 Handling terrain tags, and their organization (overwrite editor aspects maybe?)
 
 Haven't started:
 Pause Menu
 Other player animations (running, surfing, bike)
 Battle System (hardest part)
-Othere scenes (bag, party, etc)
+Other scenes (bag, party, etc)
 Reading/writing pokemon data, and then using that data in game
 Same for the bag
 Way more than I want to list

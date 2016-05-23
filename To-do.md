@@ -16,6 +16,12 @@ Grid based player movement
 
 NPC character animations (generated based on charset, no need for attatching animations.  Don't know if walking animations work yet, since NPCs can't walk)
 
+Metadata handled by scripts attatched to the objects that hold each map
+
+A watcher that determines when map changes are made
+
+Metadata changes implemented upon map change
+
 
 Things currently working on:
 Audio fade in/out capabilities
@@ -23,9 +29,9 @@ Audio fade in/out capabilities
 
 Possible ideas:
 
-Make Metadata objects all sub-objects of Metadata (for better organization.  A singular Metadata gameobject is created with a click.  In it are all the metadata options.  Upon loading the scene, all the other objects are generated based on these settings)
-
 Handling terrain tags, and their organization (overwrite editor aspects maybe?)
+
+
 
 Haven't started:
 Pause Menu

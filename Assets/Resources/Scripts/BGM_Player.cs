@@ -13,7 +13,15 @@ public class BGM_Player : MonoBehaviour {
 	}
 
 	void Start () {
+		AudioController.stopBGM();
 		AudioController.playBGM(bgmSource.name, volume);
 	}
 
+	void Destroy () {
+		AudioController.stopBGM();
+	}
+
+	void OnDisable () {
+		AudioController.stopBGM();
+	}
 }

@@ -64,7 +64,7 @@ public class DayNightShading : MonoBehaviour {
 		CancelInvoke("updateShading");
 	}
 
-	//stop the invoke repeating if object is destoryed
+	//stop the invoke repeating if object is disabled
 	void OnDisable(){
 		CancelInvoke("updateShading");
 	}

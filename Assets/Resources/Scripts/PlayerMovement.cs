@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
 
-	Vector3 pos;                                // For movement
+	Vector3 pos;
+	Vector3 oldPos;                        // For movement
 	float speed = 1.0f;                         // Speed of movement
 	float distance = 0.32f;
 	private Rigidbody2D rbody;
@@ -15,12 +16,16 @@ public class PlayerMovement : MonoBehaviour {
 	public int facing = 0;
 	bool transferred = false;
 
+	MapPositionWatcher positionWatcher;
+
 
 	// Use this for initialization
 	void Start () {
 		pos = transform.position;          // Take the initial position
+		oldPos = pos;
 		rbody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
+		positionWatcher = GetComponent<MapPositionWatcher>();
 		updateFacing();
 	}
 
@@ -109,11 +114,14 @@ public class PlayerMovement : MonoBehaviour {
 
 		 transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
 
-		 if(Vector3.Distance(transform.position, pos) < 0.05f){
-			 	//if the player isn't hold down any buttons
-				if (!Input.GetButton("Down") && !Input.GetButton("Up") && !Input.GetButton("Right") && !Input.GetButton("Left")){
-					anim.SetBool ("is_walking", false);
-				}
+
+
+		 if(oldPos!=pos && Vector3.Distance(transform.position, pos) == 0.0f) {
+			 if (!Input.GetButton("Down") && !Input.GetButton("Up") && !Input.GetButton("Right") && !Input.GetButton("Left")){
+			 	anim.SetBool ("is_walking", false);
+			 }
+			 positionWatcher.updatePosition();
+			 oldPos = pos;
 		 }
 
 		 if (Input.GetKey(KeyCode.Space)){

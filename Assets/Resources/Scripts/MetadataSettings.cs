@@ -17,7 +17,7 @@ public class MetadataSettings : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
 		if (bgmSource != null){
 			addBGMPlayer();
 		}
@@ -33,7 +33,7 @@ public class MetadataSettings : MonoBehaviour {
 		bgmPlayer.AddComponent<BGM_Player>();
 		bgmPlayer.GetComponent<BGM_Player>().bgmSource = bgmSource;
 		bgmPlayer.GetComponent<BGM_Player>().volume = volume;
-		bgmPlayer.transform.parent = gameObject.transform;
+		bgmPlayer.transform.SetParent(gameObject.transform, false);
 	}
 
 	//make new game object and make the appropriate attatchments for the day night cycle, then attach to the parent
@@ -47,17 +47,17 @@ public class MetadataSettings : MonoBehaviour {
 		dnShader.AddComponent<UnityEngine.CanvasRenderer>();
 		dnShader.AddComponent<UnityEngine.UI.GraphicRaycaster>();
 		dnShader.layer = UnityEngine.LayerMask.NameToLayer("UI");
-		dnShader.AddComponent<UnityEngine.RectTransform>();
+		//dnShader.AddComponent<UnityEngine.RectTransform>();
 		UnityEngine.UI.CanvasScaler canvScale = dnShader.GetComponent<UnityEngine.UI.CanvasScaler>();
 		canvScale.uiScaleMode = (UnityEngine.UI.CanvasScaler.ScaleMode) UnityEngine.ScaleMode.ScaleAndCrop;
-		dnShader.transform.parent = gameObject.transform;
+		dnShader.transform.SetParent(gameObject.transform, false);
 
 		//add child panel
 		UnityEngine.GameObject panel = new UnityEngine.GameObject("Panel");
 		panel.AddComponent<UnityEngine.CanvasRenderer>();
 		panel.AddComponent<UnityEngine.RectTransform>();
 		panel.layer = UnityEngine.LayerMask.NameToLayer("UI");
-		panel.transform.parent = dnShader.transform;
+		panel.transform.SetParent(dnShader.transform, false);
 
 
 		//add image and shading script
@@ -67,12 +67,37 @@ public class MetadataSettings : MonoBehaviour {
 		image.GetComponent<UnityEngine.UI.Image>().color = new UnityEngine.Color(1,1,1,0.0f);
 		image.AddComponent<DayNightShading>();
 		image.layer = UnityEngine.LayerMask.NameToLayer("UI");
-		image.transform.parent = panel.transform;
+		image.transform.SetParent(panel.transform, false);
 
 
 		panel.GetComponent<UnityEngine.RectTransform>().anchoredPosition = new UnityEngine.Vector2(0, 0);
 		panel.GetComponent<UnityEngine.RectTransform>().anchorMax = new UnityEngine.Vector2(1.0f, 1.0f);
 		panel.GetComponent<UnityEngine.RectTransform>().anchorMin = new UnityEngine.Vector2(0, 0);
+	}
+
+	void OnDisable(){
+		removeBGMPlayer();
+		removeDayNightCycle();
+	}
+
+	void removeBGMPlayer(){
+		foreach (Transform child in transform){
+			if (child.gameObject.name.Equals("BGM Player")){
+				Destroy(child.gameObject.GetComponent<BGM_Player>());
+				Destroy(child.gameObject);
+			}
+		}
+	}
+
+	void removeDayNightCycle(){
+		foreach (Transform child in transform){
+			if (child.gameObject.name.Equals("Day/Night Shader")){
+				foreach (Transform obj2 in child.transform){
+					Destroy(obj2.gameObject);
+				}
+				Destroy(child.gameObject);
+			}
+		}
 	}
 
 }

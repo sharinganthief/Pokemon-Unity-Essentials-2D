@@ -229,5 +229,13 @@ public class AudioController : MonoBehaviour {
 		}
 	}
 
+	public static void stopBGM(){
+		if (audioSourceBGM==null){
+			return;
+		}
+		audioSourceBGM.Stop();
+		audioSourceBGM = null;
+	}
+
 
 }

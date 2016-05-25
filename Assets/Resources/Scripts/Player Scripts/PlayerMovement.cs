@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour {
 		 }
 
 		 if (Input.GetKey(KeyCode.Space)){
-			 //StaticCoroutine.DoCoroutine(AudioController.fadeOutCurrent());
+			 UIManager.displayText("This is also a test");
 		 }
 	}
 

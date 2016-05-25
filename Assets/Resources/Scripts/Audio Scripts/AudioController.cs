@@ -87,7 +87,6 @@ public class AudioController : MonoBehaviour {
 			tempObjectSE = new GameObject ();
 			tempObjectSE.AddComponent<AudioSource> ();
 			audioSourceSE  = tempObjectSE.GetComponent<AudioSource> ();
-			audioSourceSE = tempObjectSE.GetComponent<AudioSource>();
 			filename = System.IO.Path.GetFileNameWithoutExtension(filename);
 			audioSourceSE.clip = Resources.Load(audioSEPathShort+filename, typeof(AudioClip)) as AudioClip;
 			audioSourceSE.volume = volume;
@@ -99,7 +98,6 @@ public class AudioController : MonoBehaviour {
 			tempObjectBGM = new GameObject ();
 			tempObjectBGM.AddComponent<AudioSource> ();
 			audioSourceBGM  = tempObjectBGM.GetComponent<AudioSource> ();
-			audioSourceBGM = tempObjectBGM.GetComponent<AudioSource>();
 			filename = System.IO.Path.GetFileNameWithoutExtension(filename);
 			audioSourceBGM.clip = Resources.Load(audioBGMPathShort+filename, typeof(AudioClip)) as AudioClip;
 			audioSourceBGM.volume = volume;
@@ -111,7 +109,6 @@ public class AudioController : MonoBehaviour {
 			tempObjectBGS = new GameObject ();
 			tempObjectBGS.AddComponent<AudioSource> ();
 			audioSourceBGS  = tempObjectBGS.GetComponent<AudioSource> ();
-			audioSourceBGS = tempObjectBGS.GetComponent<AudioSource>();
 			filename = System.IO.Path.GetFileNameWithoutExtension(filename);
 			audioSourceBGS.clip = Resources.Load(audioBGSPathShort+filename, typeof(AudioClip)) as AudioClip;
 			audioSourceBGS.volume = volume;
@@ -123,7 +120,6 @@ public class AudioController : MonoBehaviour {
 			tempObjectCry = new GameObject ();
 			tempObjectCry.AddComponent<AudioSource> ();
 			audioSourceCry  = tempObjectCry.GetComponent<AudioSource> ();
-			audioSourceCry = tempObjectCry.GetComponent<AudioSource>();
 			filename = System.IO.Path.GetFileNameWithoutExtension(filename);
 			audioSourceCry.clip = Resources.Load(audioCryPathShort+filename, typeof(AudioClip)) as AudioClip;
 			audioSourceCry.volume = volume;

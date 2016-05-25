@@ -333,7 +333,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 407672, guid: 2f1524efabf38dd41a42d3e27e59048e, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_SortingOrder
@@ -686,6 +686,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7436316b9cf57641a0a30591f5db41d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1823847516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1823847517}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: UIManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1823847517
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1823847516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.5388327, y: -53.5162735, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1001 &1925952156
 Prefab:
   m_ObjectHideFlags: 0
@@ -723,8 +750,45 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 479442, guid: 87b4312a7a96a61479dd79a146cec103, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 87b4312a7a96a61479dd79a146cec103, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1925952157 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 167878, guid: 87b4312a7a96a61479dd79a146cec103, type: 2}
+  m_PrefabInternal: {fileID: 1925952156}
+--- !u!60 &1925952158
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1925952157}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 2.88294125, y: -3.21117783}
+      - {x: 2.8872366, y: -3.50717545}
+      - {x: 3.53621101, y: -3.51919556}
+      - {x: 3.53148651, y: -3.84393692}
+      - {x: 5.78874874, y: -3.85027695}
+      - {x: 5.76367283, y: -4.47993469}
+      - {x: 2.53014469, y: -4.47993469}
+      - {x: 2.53125095, y: -3.2079277}
+--- !u!114 &1925952164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1925952157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34d90655b17ecfa409c8b53f50299f32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curTerrainType: 2

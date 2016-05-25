@@ -27,6 +27,9 @@ public class DisplayText : MonoBehaviour {
 
 	public void SetText(string newText)
 	{
+			if (FontManager.hasFont("Power Green")) {
+				guiStyle.font = FontManager.getFont("Power Green");
+			}
 			guiStyle.richText = true;
 			guiStyle.fontSize = 20;
 			guiStyle.wordWrap = true;

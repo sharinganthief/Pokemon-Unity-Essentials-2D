@@ -42,40 +42,6 @@ public class PlayerMovement : MonoBehaviour {
 			anim.SetBool ("is_walking", false);
 		}
 		else {
-			if(Input.GetButton("Left") && transform.position == pos) {        // Left
-					leftTime += Time.deltaTime;
-					rightTime = 0.0f;
-					upTime = 0.0f;
-					downTime = 0.0f;
-					if (leftTime > 0.1f ) {
-						if (PassabilityCheck.canPass(rbody, new Vector2(distance*-1, 0.0f), distance)){
-							pos += new Vector3(distance*-1, 0.0f, 0.0f);
-							anim.SetBool ("is_walking", true);
-						} else {
-							anim.SetBool ("is_walking", false);
-							AudioController.playSE("bump.mp3");
-						}
-					}
-					anim.SetFloat("input_x", -1);
-					anim.SetFloat("input_y", 0);
-			 }
-			 if(Input.GetButton("Right") && transform.position == pos) {        // Right
-					leftTime = 0.0f;
-					rightTime += Time.deltaTime;
-					upTime = 0.0f;
-					downTime = 0.0f;
-					if ( rightTime > 0.1f ) {
-						if (PassabilityCheck.canPass(rbody, new Vector2(distance, 0.0f), distance)){
-							pos += new Vector3(distance, 0.0f, 0.0f);
-							anim.SetBool ("is_walking", true);
-					  } else {
-							anim.SetBool ("is_walking", false);
-							AudioController.playSE("bump.mp3");
-						}
-					}
-					anim.SetFloat("input_x", 1);
-					anim.SetFloat("input_y", 0);
-			 }
 			 if(Input.GetButton("Up") && transform.position == pos) {        // Up
 					leftTime = 0.0f;
 					rightTime = 0.0f;
@@ -92,8 +58,7 @@ public class PlayerMovement : MonoBehaviour {
 					}
 					anim.SetFloat("input_x", 0);
 					anim.SetFloat("input_y", 1);
-			 }
-			 if(Input.GetButton("Down") && transform.position == pos) {        // Down
+			 } else if(Input.GetButton("Down") && transform.position == pos) {        // Down
 					leftTime = 0.0f;
 					rightTime = 0.0f;
 					upTime = 0.0f;
@@ -109,7 +74,39 @@ public class PlayerMovement : MonoBehaviour {
 					}
 					anim.SetFloat("input_x", 0);
 					anim.SetFloat("input_y", -1);
-			 }
+			 } else if(Input.GetButton("Left") && transform.position == pos) {        // Left
+ 					leftTime += Time.deltaTime;
+ 					rightTime = 0.0f;
+ 					upTime = 0.0f;
+ 					downTime = 0.0f;
+ 					if (leftTime > 0.1f ) {
+ 						if (PassabilityCheck.canPass(rbody, new Vector2(distance*-1, 0.0f), distance)){
+ 							pos += new Vector3(distance*-1, 0.0f, 0.0f);
+ 							anim.SetBool ("is_walking", true);
+ 						} else {
+ 							anim.SetBool ("is_walking", false);
+ 							AudioController.playSE("bump.mp3");
+ 						}
+ 					}
+ 					anim.SetFloat("input_x", -1);
+ 					anim.SetFloat("input_y", 0);
+ 			 } else if(Input.GetButton("Right") && transform.position == pos) {        // Right
+ 					leftTime = 0.0f;
+ 					rightTime += Time.deltaTime;
+ 					upTime = 0.0f;
+ 					downTime = 0.0f;
+ 					if ( rightTime > 0.1f ) {
+ 						if (PassabilityCheck.canPass(rbody, new Vector2(distance, 0.0f), distance)){
+ 							pos += new Vector3(distance, 0.0f, 0.0f);
+ 							anim.SetBool ("is_walking", true);
+ 					  } else {
+ 							anim.SetBool ("is_walking", false);
+ 							AudioController.playSE("bump.mp3");
+ 						}
+ 					}
+ 					anim.SetFloat("input_x", 1);
+ 					anim.SetFloat("input_y", 0);
+ 			 }
 		 }
 
 		 transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there

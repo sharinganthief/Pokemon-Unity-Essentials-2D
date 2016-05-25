@@ -10,24 +10,24 @@ public class PassabilityCheck : MonoBehaviour {
 
 		RaycastHit2D hit = Physics2D.Raycast(player.transform.position, target);
 
+
+		//reverse raycast, to determine if we're inside a collider
+		RaycastHit2D hitReverse = Physics2D.Raycast(target, player.transform.position);
+
+
 		if (hit.collider != null){
-			//if you're within a collider
-			if (hit.collider.OverlapPoint(player.transform.position + new Vector3(target.x, target.y, player.transform.position.z))){
+			if (hit.distance <= distance){
 				if (hit.collider.gameObject.GetComponent<TerrainTagChecker>() != null) {
 					TerrainType type = hit.collider.gameObject.GetComponent<TerrainTagChecker>().getTerrainType();
 					Debug.Log(type);
 				} else if (hit.distance <= distance){
-					ret = false;
-				}
-			//if you would touch a collider
-			} else if (hit.distance <= distance){
-				if (hit.collider.gameObject.GetComponent<TerrainTagChecker>() != null) {
-					Debug.Log(hit.collider.gameObject.GetComponent<TerrainTagChecker>().getTerrainType());
-				} else if (hit.distance <= distance){
-					ret = false;
+					return false;
 				}
 			}
+		} else if (hit.rigidbody != null) {
+			Debug.Log(hit.rigidbody.gameObject.name);
 		}
+
 		return ret;
 	}
 

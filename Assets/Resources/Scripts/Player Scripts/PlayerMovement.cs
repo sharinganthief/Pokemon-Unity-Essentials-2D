@@ -9,11 +9,17 @@ public class PlayerMovement : MonoBehaviour {
 	float distance = 0.32f;
 	private Rigidbody2D rbody;
 	private Animator anim;
-	private float leftTime = 0.0f;
-	private float rightTime = 0.0f;
-	private float upTime = 0.0f;
-	private float downTime = 0.0f;
+
+
+	private float[] movingTimes = {0.0f, 0.0f, 0.0f, 0.0f};
+	private Vector3[] movingVectors;
+	private int[,] xyCoords = new int[,] { {0,1}, {-1,0}, {0,-1}, {1,0}  };
+
 	public int facing = 0;
+
+
+	private string strDirection = "";
+	private int intDirection = 0;
 	bool transferred = false;
 
 	MapPositionWatcher positionWatcher;
@@ -26,6 +32,14 @@ public class PlayerMovement : MonoBehaviour {
 		rbody = GetComponent<Rigidbody2D> ();
 		anim = GetComponent<Animator> ();
 		positionWatcher = GetComponent<MapPositionWatcher>();
+
+		movingVectors = new Vector3[4] {
+			new Vector3(0.0f, distance, 0.0f),
+			new Vector3(-1*distance, 0.0f, 0.0f),
+			new Vector3(0.0f, -1*distance, 0.0f),
+			new Vector3(distance, 0.0f, 0.0f)
+		};
+
 		updateFacing();
 	}
 
@@ -35,86 +49,65 @@ public class PlayerMovement : MonoBehaviour {
 		if (transferred) {
 			transferred = false;
 			pos = transform.position;
-			leftTime = 0.0f;
-			rightTime = 0.0f;
-			upTime = 0.0f;
-			downTime = 0.0f;
+			for (int i = 0; i < movingTimes.Length; i++){
+				movingTimes[i] = 0.0f;
+			}
 			anim.SetBool ("is_walking", false);
 		}
 		else {
-			 if(Input.GetButton("Up") && transform.position == pos) {        // Up
-					leftTime = 0.0f;
-					rightTime = 0.0f;
-					upTime += Time.deltaTime;
-					downTime = 0.0f;
-					if ( upTime > 0.1f ) {
-						if (PassabilityCheck.canPass(rbody, new Vector2(0.0f, distance), distance)){
-							pos += new Vector3(0.0f, distance, 0.0f);
+			 //prefer button player is currently holding down first, determine which button is being pushed
+			 if (strDirection.Equals("") || !Input.GetButton(strDirection)){
+				 if (Input.GetButton("Up")) {
+					 strDirection = "Up";
+					 intDirection = 0;
+				 } else if (Input.GetButton("Left")) {
+					 strDirection = "Left";
+					 intDirection = 1;
+				 } else if (Input.GetButton("Down")) {
+					 strDirection = "Down";
+					 intDirection = 2;
+				 } else if (Input.GetButton("Right")) {
+					 strDirection = "Right";
+					 intDirection = 3;
+				 } else {
+					 strDirection = "";
+					 for (int i = 0; i < movingTimes.Length; i++){
+						 movingTimes[i] = 0.0f;
+					 }
+				 }
+			 }
+
+
+
+			 if(!strDirection.Equals("") && Input.GetButton(strDirection) && transform.position == pos) {  //move in predetermined direction
+					for (int i = 0; i < movingTimes.Length; i++){
+						if (i == intDirection){
+							movingTimes[i] += Time.deltaTime;
+						} else {
+							movingTimes[i] = 0.0f;
+						}
+					}
+					if ( movingTimes[intDirection] > 0.1f ) {
+						if (PassabilityCheck.canPass(rbody, movingVectors[intDirection], distance)){
+							pos += movingVectors[intDirection];
 							anim.SetBool ("is_walking", true);
 						} else {
 							anim.SetBool ("is_walking", false);
 							AudioController.playSE("bump.mp3");
 						}
+					} else {
+						anim.SetBool ("is_walking", false);
 					}
-					anim.SetFloat("input_x", 0);
-					anim.SetFloat("input_y", 1);
-			 } else if(Input.GetButton("Down") && transform.position == pos) {        // Down
-					leftTime = 0.0f;
-					rightTime = 0.0f;
-					upTime = 0.0f;
-					downTime += Time.deltaTime;
-					if ( downTime > 0.1f ) {
-						if (PassabilityCheck.canPass(rbody, new Vector2(0.0f, distance*-1), distance)){
-							pos += new Vector3(0.0f, distance*-1, 0.0f);
-							anim.SetBool ("is_walking", true);
-						} else {
-							anim.SetBool ("is_walking", false);
-							AudioController.playSE("bump.mp3");
-						}
-					}
-					anim.SetFloat("input_x", 0);
-					anim.SetFloat("input_y", -1);
-			 } else if(Input.GetButton("Left") && transform.position == pos) {        // Left
- 					leftTime += Time.deltaTime;
- 					rightTime = 0.0f;
- 					upTime = 0.0f;
- 					downTime = 0.0f;
- 					if (leftTime > 0.1f ) {
- 						if (PassabilityCheck.canPass(rbody, new Vector2(distance*-1, 0.0f), distance)){
- 							pos += new Vector3(distance*-1, 0.0f, 0.0f);
- 							anim.SetBool ("is_walking", true);
- 						} else {
- 							anim.SetBool ("is_walking", false);
- 							AudioController.playSE("bump.mp3");
- 						}
- 					}
- 					anim.SetFloat("input_x", -1);
- 					anim.SetFloat("input_y", 0);
- 			 } else if(Input.GetButton("Right") && transform.position == pos) {        // Right
- 					leftTime = 0.0f;
- 					rightTime += Time.deltaTime;
- 					upTime = 0.0f;
- 					downTime = 0.0f;
- 					if ( rightTime > 0.1f ) {
- 						if (PassabilityCheck.canPass(rbody, new Vector2(distance, 0.0f), distance)){
- 							pos += new Vector3(distance, 0.0f, 0.0f);
- 							anim.SetBool ("is_walking", true);
- 					  } else {
- 							anim.SetBool ("is_walking", false);
- 							AudioController.playSE("bump.mp3");
- 						}
- 					}
- 					anim.SetFloat("input_x", 1);
- 					anim.SetFloat("input_y", 0);
- 			 }
+					anim.SetFloat("input_x", xyCoords[intDirection, 0]);
+					anim.SetFloat("input_y", xyCoords[intDirection, 1]);
+			 }
 		 }
 
 		 transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
 
 
-
 		 if(oldPos!=pos && Vector3.Distance(transform.position, pos) == 0.0f) {
-			 if (!Input.GetButton("Down") && !Input.GetButton("Up") && !Input.GetButton("Right") && !Input.GetButton("Left")){
+			 if (strDirection.Equals("") || !Input.GetButton(strDirection)){
 			 	anim.SetBool ("is_walking", false);
 			 }
 			 positionWatcher.updatePosition();

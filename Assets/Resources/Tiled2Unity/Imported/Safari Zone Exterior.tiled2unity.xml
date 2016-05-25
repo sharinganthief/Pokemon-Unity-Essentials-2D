@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 5/22/2016 4:30:26 PM-->
+<!--Last exported: 5/25/2016 2:16:55 PM-->
 <Tiled2Unity version="1.0.5.1">
   <AssignMaterial mesh="mesh_0001" material="Paths and Grass" />
   <AssignMaterial mesh="mesh_0002" material="Trees" />
@@ -19,6 +19,20 @@
     </GameObject>
     <GameObject name="Grass" x="0" y="0">
       <GameObject name="Paths and Grass" copy="mesh_0003" sortingLayerName="" sortingOrder="2" opacity="1" />
+      <GameObject name="Collision">
+        <PolygonCollider2D>
+          <Path>2.87,-3.21 2.57,-3.21 2.57,-4.49 2.87,-4.49</Path>
+          <Path>3.51,-3.53 3.21,-3.53 3.21,-4.49 3.51,-4.49</Path>
+          <Path>3.19,-3.53 2.89,-3.53 2.89,-4.49 3.19,-4.49</Path>
+          <Path>3.83,-3.85 3.53,-3.85 3.53,-4.49 3.83,-4.49</Path>
+          <Path>4.15,-3.85 3.85,-3.85 3.85,-4.49 4.15,-4.49</Path>
+          <Path>4.47,-3.85 4.17,-3.85 4.17,-4.49 4.47,-4.49</Path>
+          <Path>4.79,-3.85 4.49,-3.85 4.49,-4.49 4.79,-4.49</Path>
+          <Path>5.11,-3.85 4.81,-3.85 4.81,-4.49 5.11,-4.49</Path>
+          <Path>5.43,-3.85 5.13,-3.85 5.13,-4.49 5.43,-4.49</Path>
+          <Path>5.75,-3.85 5.45,-3.85 5.45,-4.49 5.75,-4.49</Path>
+        </PolygonCollider2D>
+      </GameObject>
     </GameObject>
     <GameObject name="Paths" x="0" y="0">
       <GameObject name="Paths and Grass" copy="mesh_0004" sortingLayerName="" sortingOrder="3" opacity="1" />

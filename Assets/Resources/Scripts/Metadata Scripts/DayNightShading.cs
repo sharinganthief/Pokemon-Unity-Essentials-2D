@@ -5,24 +5,21 @@ using System.Collections.Generic;
 
 public class DayNightShading : MonoBehaviour {
 
-	private Image image;
-	private CanvasRenderer canvRend;
 
-	private List<Color> hourlyTones = new List<Color> ();
+	private static List<Color> hourlyTones = new List<Color> ();
 
 
-	public int hour;
+	public static float baseTone = 1f;
 
-	public float baseTone = 0.2f;
+	public static bool hasInitializedTones = false;
 
 	// Use this for initialization
-	void OnEnable() {
-
+	public static void initializeTones() {
 		//color choices could use some work
 		hourlyTones.Add(new Color(0, 0, 1, baseTone));// Midnight
-		hourlyTones.Add(new Color(0.1f, 0.1f, 1, baseTone));
-		hourlyTones.Add(new Color(0.3f, 0.1f, 1, baseTone));
-		hourlyTones.Add(new Color(0.4f, 0.2f, 0.9f, baseTone));
+		hourlyTones.Add(new Color(0.1f, 0.1f, 0.8f, baseTone));
+		hourlyTones.Add(new Color(0.5f, 0.5f, 0.75f, baseTone));
+		hourlyTones.Add(new Color(0.4f, 0.4f, 0.75f, baseTone));
 		hourlyTones.Add(new Color(0.6f, 0.3f, 0.7f, baseTone));
 		hourlyTones.Add(new Color(0.8f, 0.4f, 0.6f, baseTone));
 		hourlyTones.Add(new Color(0.8f, 0.5f, 0.5f, baseTone));// 6AM
@@ -43,29 +40,19 @@ public class DayNightShading : MonoBehaviour {
 		hourlyTones.Add(new Color(0.3f, 0.2f, 1, baseTone));
 		hourlyTones.Add(new Color(0.1f, 0.1f, 1, baseTone));
 		hourlyTones.Add(new Color(0, 0, 1, baseTone));
-
-		image = GetComponent<Image>();
-		image.rectTransform.sizeDelta = new Vector2(Screen.width,Screen.height);
-		hour = TimeFunctions.getHour();
-		image.color = hourlyTones[hour];
-
-		//update day/night shading every 60 seconds (possibly change rate, idk)
-		InvokeRepeating("updateShading", 0.0f, 60.0f);
 	}
 
 	// Update is called once per frame
-	void updateShading () {
-		hour = TimeFunctions.getHour();
-		image.color = hourlyTones[hour];
+	public static Color getCurrentShading () {
+		if (!hasInitializedTones){
+			DayNightShading.initializeTones();
+		}
+		if (CheckCurrentMetadata.isIndoorMap()){
+			return new Color(1,1,1,1);
+		}
+		int hour = TimeFunctions.getHour();
+		return hourlyTones[hour];
+
 	}
 
-	//stop the invoke repeating if object is destoryed
-	void OnDestroy(){
-		CancelInvoke("updateShading");
-	}
-
-	//stop the invoke repeating if object is disabled
-	void OnDisable(){
-		CancelInvoke("updateShading");
-	}
 }

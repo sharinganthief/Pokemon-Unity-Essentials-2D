@@ -20,10 +20,9 @@ namespace Tiled2Unity
             // If supported in the sahder set our opacity
             // (Keep opacity at 1.0 to avoid copying the material)
             MeshRenderer meshRendrer = this.gameObject.GetComponent<MeshRenderer>();
-            if (this.InitialOpacity != 1.0f && meshRendrer.material.HasProperty("_Color"))
-            {
-                meshRendrer.material.SetColor("_Color", new Color(1, 1, 1, this.InitialOpacity));
-            }
+            Color dayNightColor = DayNightShading.getCurrentShading();
+            meshRendrer.material.SetColor("_Color", dayNightColor);
         }
+
     }
 }

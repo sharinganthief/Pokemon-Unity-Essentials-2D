@@ -10,11 +10,6 @@ public class PassabilityCheck : MonoBehaviour {
 
 		RaycastHit2D hit = Physics2D.Raycast(player.transform.position, target);
 
-
-		//reverse raycast, to determine if we're inside a collider
-		RaycastHit2D hitReverse = Physics2D.Raycast(target, player.transform.position);
-
-
 		if (hit.collider != null){
 			if (hit.distance <= distance){
 				if (hit.collider.gameObject.GetComponent<TerrainTagChecker>() != null) {

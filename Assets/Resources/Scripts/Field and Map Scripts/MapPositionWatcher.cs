@@ -14,7 +14,7 @@ public class MapPositionWatcher : MonoBehaviour {
 	MapInfo curMap;
 
 
-	void Start () {
+	void Awake () {
 		 GameObject[] tempObjects = Object.FindObjectsOfType<GameObject>() ;
 		 foreach (GameObject go in tempObjects){
 			 if (go.activeInHierarchy && go.GetComponent<Tiled2Unity.TiledMap>() != null){
@@ -22,6 +22,7 @@ public class MapPositionWatcher : MonoBehaviour {
 				 				go.GetComponent<Tiled2Unity.TiledMap>().GetMapWidthInPixelsScaled(), go.GetComponent<Tiled2Unity.TiledMap>().GetMapHeightInPixelsScaled()));
 			 }
 		 }
+		 Debug.Log("asfd2");
 		 updatePosition();
 	}
 
@@ -42,6 +43,10 @@ public class MapPositionWatcher : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	public MapInfo currentMap(){
+		return curMap;
 	}
 
 

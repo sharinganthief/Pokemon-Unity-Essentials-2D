@@ -100,6 +100,8 @@ public class PlayerMovement : MonoBehaviour {
 					}
 					anim.SetFloat("input_x", xyCoords[intDirection, 0]);
 					anim.SetFloat("input_y", xyCoords[intDirection, 1]);
+			 } else if (transform.position == pos){
+				 anim.SetBool ("is_walking", false);
 			 }
 		 }
 
@@ -115,7 +117,7 @@ public class PlayerMovement : MonoBehaviour {
 		 }
 
 		 if (Input.GetKey(KeyCode.Space)){
-			 UIManager.displayText("This is also a test");
+			 UIManager.displayText("This is also a test.  In fact, this is a really long test that will extend to the next line.  Or maybe it won't.");
 		 }
 	}
 

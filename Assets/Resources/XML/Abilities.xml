@@ -1,0 +1,21 @@
+<Abilities>
+
+  <Ability>
+    <InternalName>STENCH</InternalName>
+    <Name>Stench</Name>
+    <Description>The stench may cause the target to flinch</Description>
+  </Ability>
+
+  <Ability>
+    <InternalName>DRIZZLE</InternalName>
+    <Name>Drizzle</Name>
+    <Description>The Pokémon makes it rain if it appears in battle</Description>
+  </Ability>
+
+  <Ability>
+    <InternalName>DROUGHT</InternalName>
+    <Name>Drought</Name>
+    <Description>The Pokémon makes it rain if it appears in battle</Description>
+  </Ability>
+
+</Abilities>

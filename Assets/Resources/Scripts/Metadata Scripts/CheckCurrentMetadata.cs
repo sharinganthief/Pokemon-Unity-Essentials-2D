@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+
 
 public class CheckCurrentMetadata : MonoBehaviour {
 
@@ -10,7 +10,6 @@ public class CheckCurrentMetadata : MonoBehaviour {
 		GameObject[] tempObjects = Object.FindObjectsOfType<GameObject>() ;
 		foreach (GameObject go in tempObjects){
 			if (go.name.Equals("Player")){
-				Debug.Log("asfd");
 				mapPositionWatcher = go.GetComponent<MapPositionWatcher>();
 				hasFoundPositionWatcher = true;
 			}
@@ -22,7 +21,13 @@ public class CheckCurrentMetadata : MonoBehaviour {
 			findMapPositionWatcher();
 		}
 		return mapPositionWatcher.currentMap().getObjectMap().GetComponent<MetadataSettings>().indoorMap;
+	}
 
+	public static MapInfo getCurMap(){
+		if (!hasFoundPositionWatcher){
+			findMapPositionWatcher();
+		}
+		return mapPositionWatcher.currentMap();
 	}
 
 

@@ -22,7 +22,6 @@ public class MapPositionWatcher : MonoBehaviour {
 				 				go.GetComponent<Tiled2Unity.TiledMap>().GetMapWidthInPixelsScaled(), go.GetComponent<Tiled2Unity.TiledMap>().GetMapHeightInPixelsScaled()));
 			 }
 		 }
-		 Debug.Log("asfd2");
 		 updatePosition();
 	}
 
@@ -37,7 +36,7 @@ public class MapPositionWatcher : MonoBehaviour {
 						}
 						curMap = map;
 						curMap.getObjectMap().GetComponent<MetadataSettings>().enabled = true;
-						Debug.Log(map.getName());
+						//Debug.Log(map.getName());
 						break;
 					}
 				}

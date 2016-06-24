@@ -7,7 +7,7 @@
   <image source="../Tilesets/Paths and Grass.png" width="256" height="8192"/>
   <tile id="6">
    <objectgroup draworder="index">
-    <object id="0" x="1" y="1" width="32" height="32"/>
+    <object id="0" x="0.545455" y="0.545455" width="30.5455" height="30.5455"/>
    </objectgroup>
   </tile>
  </tileset>

@@ -1,0 +1,223 @@
+<Types>
+
+  <Type>
+    <InternalName>NORMAL</InternalName>
+    <Name>Normal</Name>
+    <Weakness>FIGHTING</Weakness>
+    <Immunity>GHOST</Immunity>
+  </Type>
+
+  <Type>
+    <InternalName>FIGHTING</InternalName>
+    <Name>Fighting</Name>
+    <Weakness>FLYING</Weakness>
+    <Weakness>PSYCHIC</Weakness>
+    <Weakness>FAIRY</Weakness>
+    <Resistance>ROCK</Resistance>
+    <Resistance>BUG</Resistance>
+    <Resistance>DARK</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>FLYING</InternalName>
+    <Name>Flying</Name>
+    <Weakness>ROCK</Weakness>
+    <Weakness>ELECTRIC</Weakness>
+    <Weakness>ICE</Weakness>
+    <Resistance>FIGHTING</Resistance>
+    <Resistance>BUG</Resistance>
+    <Resistance>GRASS</Resistance>
+    <Immunity>GROUND</Immunity>
+  </Type>
+
+  <Type>
+    <InternalName>POISON</InternalName>
+    <Name>Poison</Name>
+    <Weakness>GROUND</Weakness>
+    <Weakness>PSYCHIC</Weakness>
+    <Resistance>FIGHTING</Resistance>
+    <Resistance>POISON</Resistance>
+    <Resistance>BUG</Resistance>
+    <Resistance>GRASS</Resistance>
+    <Resistance>FAIRY</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>GROUND</InternalName>
+    <Name>Ground</Name>
+    <Weakness>WATER</Weakness>
+    <Weakness>GRASS</Weakness>
+    <Weakness>ICE</Weakness>
+    <Resistance>POISON</Resistance>
+    <Resistance>ROCK</Resistance>
+    <Immunity>ELECTRIC</Immunity>
+  </Type>
+
+  <Type>
+    <InternalName>ROCK</InternalName>
+    <Name>Rock</Name>
+    <Weakness>FIGHTING</Weakness>
+    <Weakness>GROUND</Weakness>
+    <Weakness>STEEL</Weakness>
+    <Weakness>WATER</Weakness>
+    <Weakness>GRASS</Weakness>
+    <Resistance>NORMAL</Resistance>
+    <Resistance>FLYING</Resistance>
+    <Resistance>POISON</Resistance>
+    <Resistance>FIRE</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>BUG</InternalName>
+    <Name>Bug</Name>
+    <Weakness>FLYING</Weakness>
+    <Weakness>ROCK</Weakness>
+    <Weakness>FIRE</Weakness>
+    <Resistance>FIGHTING</Resistance>
+    <Resistance>GROUND</Resistance>
+    <Resistance>GRASS</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>GHOST</InternalName>
+    <Name>Ghost</Name>
+    <Weakness>GHOST</Weakness>
+    <Weakness>DARK</Weakness>
+    <Resistance>POISON</Resistance>
+    <Resistance>BUG</Resistance>
+    <Immunity>NORMAL</Immunity>
+    <Immunity>FIGHTING</Immunity>
+  </Type>
+
+  <Type>
+    <InternalName>STEEL</InternalName>
+    <Name>Steel</Name>
+    <Weakness>FIGHTING</Weakness>
+    <Weakness>GROUND</Weakness>
+    <Weakness>FIRE</Weakness>
+    <Resistance>NORMAL</Resistance>
+    <Resistance>FLYING</Resistance>
+    <Resistance>ROCK</Resistance>
+    <Resistance>BUG</Resistance>
+    <Resistance>GHOST</Resistance>
+    <Resistance>STEEL</Resistance>
+    <Resistance>GRASS</Resistance>
+    <Resistance>PSYCHIC</Resistance>
+    <Resistance>ICE</Resistance>
+    <Resistance>DRAGON</Resistance>
+    <Resistance>DARK</Resistance>
+    <Resistance>FAIRY</Resistance>
+    <Immunity>POISON</Immunity>
+  </Type>
+
+  <Type>
+    <InternalName>FIRE</InternalName>
+    <Name>Fire</Name>
+    <IsSpecial>TRUE</IsSpecial>
+    <Weakness>GROUND</Weakness>
+    <Weakness>ROCK</Weakness>
+    <Weakness>WATER</Weakness>
+    <Resistance>BUG</Resistance>
+    <Resistance>STEEL</Resistance>
+    <Resistance>FIRE</Resistance>
+    <Resistance>GRASS</Resistance>
+    <Resistance>ICE</Resistance>
+    <Resistance>FAIRY</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>WATER</InternalName>
+    <Name>Water</Name>
+    <IsSpecial>TRUE</IsSpecial>
+    <Weakness>GRASS</Weakness>
+    <Weakness>ELECTRIC</Weakness>
+    <Resistance>STEEL</Resistance>
+    <Resistance>FIRE</Resistance>
+    <Resistance>WATER</Resistance>
+    <Resistance>ICE</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>GRASS</InternalName>
+    <Name>Grass</Name>
+    <IsSpecial>TRUE</IsSpecial>
+    <Weakness>FLYING</Weakness>
+    <Weakness>POISON</Weakness>
+    <Weakness>BUG</Weakness>
+    <Weakness>FIRE</Weakness>
+    <Weakness>ICE</Weakness>
+    <Resistance>GROUND</Resistance>
+    <Resistance>WATER</Resistance>
+    <Resistance>GRASS</Resistance>
+    <Resistance>ELECTRIC</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>ELECTRIC</InternalName>
+    <Name>Electric</Name>
+    <Weakness>GROUND</Weakness>
+    <Resistance>FLYING</Resistance>
+    <Resistance>STEEL</Resistance>
+    <Resistance>ELECTRIC</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>PSYCHIC</InternalName>
+    <Name>Psychic</Name>
+    <IsSpecial>TRUE</IsSpecial>
+    <Weakness>BUG</Weakness>
+    <Weakness>GHOST</Weakness>
+    <Weakness>DARK</Weakness>
+    <Resistance>FIGHTING</Resistance>
+    <Resistance>POISON</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>ICE</InternalName>
+    <Name>Ice</Name>
+    <IsSpecial>TRUE</IsSpecial>
+    <Weakness>FIGHTING</Weakness>
+    <Weakness>ROCK</Weakness>
+    <Weakness>STEEL</Weakness>
+    <Weakness>FIRE</Weakness>
+    <Resistance>ICE</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>DRAGON</InternalName>
+    <Name>Dragon</Name>
+    <IsSpecial>TRUE</IsSpecial>
+    <Weakness>ICE</Weakness>
+    <Weakness>DRAGON</Weakness>
+    <Weakness>FAIRY</Weakness>
+    <Resistance>FIRE</Resistance>
+    <Resistance>WATER</Resistance>
+    <Resistance>GRASS</Resistance>
+    <Resistance>ELECTRIC</Resistance>
+  </Type>
+
+  <Type>
+    <InternalName>DARK</InternalName>
+    <Name>Dark</Name>
+    <IsSpecial>TRUE</IsSpecial>
+    <Weakness>FIGHTING</Weakness>
+    <Weakness>BUG</Weakness>
+    <Weakness>FAIRY</Weakness>
+    <Resistance>GHOST</Resistance>
+    <Resistance>DARK</Resistance>
+    <Immunity>PSYCHIC</Immunity>
+  </Type>
+
+  <Type>
+    <InternalName>FAIRY</InternalName>
+    <Name>Fairy</Name>
+    <IsSpecial>TRUE</IsSpecial>
+    <Weakness>POISON</Weakness>
+    <Weakness>STEEL</Weakness>
+    <Resistance>BUG</Resistance>
+    <Resistance>DARK</Resistance>
+    <Resistance>FIGHTING</Resistance>
+    <Immunity>DRAGON</Immunity>
+  </Type>
+
+</Types>

@@ -12,13 +12,15 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 	private NPCController controller;
 	private SpriteRenderer spRend;
 	private Sprite sprite;
-	int hIndex = 0;
-	int vIndex = 0;
-	string charName;
+	private int hIndex = 0;
+	private int vIndex = 0;
+	private string charName;
+	private int updateCount = 0;
+
 
 	void Start(){
 		controller = GetComponent<NPCController> ();
-		sprites = Resources.LoadAll <Sprite> ("Characters/"+sheetname);
+		sprites = Resources.LoadAll <Sprite> ("Graphics/Characters/"+sheetname);
 
     sr = GetComponent<SpriteRenderer> ();
     names = new string[sprites.Length];
@@ -44,25 +46,26 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 		// split into horizontal and vertical index
 
 		if (is_walking) {
-			hIndex+=1;
-			hIndex = hIndex % colCount;
-		}
-		else {
+			if (updateCount>30){
+				hIndex+=1;
+				hIndex = hIndex % colCount;
+				updateCount = 0;
+			} else {
+				updateCount++;
+			}
+		} else {
 			hIndex = 0;
+			updateCount = 0;
 		}
-		switch(facing){
-			case 1: //up
+
+		if (facing==1){
 				vIndex = 3;
-				break;
-			case -1: //down
+		} else if (facing == -1){
 				vIndex = 0;
-				break;
-			case 2: //right
+		} else if (facing == 2){
 				vIndex = 2;
-				break;
-			case -2: //left
+		} else if (facing == -2){
 				vIndex = 1;
-				break;
 		}
 
 		//calculate new index
@@ -72,13 +75,11 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 
 	void ChangeSprite( int index )
   {
-       Sprite sprite = sprites[index];
-       sr.sprite = sprite;
+       sr.sprite = sprites[index];
   }
 
   void ChangeSpriteByName( string name )
   {
-       Sprite sprite = sprites[System.Array.IndexOf(names, name)];
-       sr.sprite = sprite;
+       sr.sprite = sprites[System.Array.IndexOf(names, name)];
   }
 }

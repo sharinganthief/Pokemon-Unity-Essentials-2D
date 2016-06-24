@@ -6,6 +6,7 @@ public class NPCController : MonoBehaviour {
 	private bool is_walking;
 	public int facing = -1;  //start down
 
+
 	// Use this for initialization
 	void Start () {
 
@@ -24,4 +25,11 @@ public class NPCController : MonoBehaviour {
 		return is_walking;
 	}
 
+	public void setWalking(bool p_is_walking){
+		is_walking = p_is_walking;
+	}
+
+	public void setFacing(int p_direction){
+		facing = p_direction;
+	}
 }

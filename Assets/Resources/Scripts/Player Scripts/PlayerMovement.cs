@@ -8,12 +8,12 @@ public class PlayerMovement : MonoBehaviour {
 	float speed = 1.0f;                         // Speed of movement
 	float distance = 0.32f;
 	private Rigidbody2D rbody;
-	private Animator anim;
+	public NPCController anim;
 
 
 	private float[] movingTimes = {0.0f, 0.0f, 0.0f, 0.0f};
 	private Vector3[] movingVectors;
-	private int[,] xyCoords = new int[,] { {0,1}, {-1,0}, {0,-1}, {1,0}  };
+	private int[,] xyCoords = new int[,] { {0,1}, {-2,0}, {0,-1}, {2,0}  };
 
 	public int facing = 0;
 
@@ -30,7 +30,6 @@ public class PlayerMovement : MonoBehaviour {
 		pos = transform.position;          // Take the initial position
 		oldPos = pos;
 		rbody = GetComponent<Rigidbody2D> ();
-		anim = GetComponent<Animator> ();
 		positionWatcher = GetComponent<MapPositionWatcher>();
 
 		movingVectors = new Vector3[4] {
@@ -52,7 +51,7 @@ public class PlayerMovement : MonoBehaviour {
 			for (int i = 0; i < movingTimes.Length; i++){
 				movingTimes[i] = 0.0f;
 			}
-			anim.SetBool ("is_walking", false);
+			anim.setWalking(false);
 		}
 		else {
 			 //prefer button player is currently holding down first, determine which button is being pushed
@@ -90,18 +89,21 @@ public class PlayerMovement : MonoBehaviour {
 					if ( movingTimes[intDirection] > 0.1f ) {
 						if (PassabilityCheck.canPass(rbody, movingVectors[intDirection], distance)){
 							pos += movingVectors[intDirection];
-							anim.SetBool ("is_walking", true);
+							anim.setWalking(true);
 						} else {
-							anim.SetBool ("is_walking", false);
+							anim.setWalking(false);
 							AudioController.playSE("bump.mp3");
 						}
 					} else {
-						anim.SetBool ("is_walking", false);
+						anim.setWalking(false);
 					}
-					anim.SetFloat("input_x", xyCoords[intDirection, 0]);
-					anim.SetFloat("input_y", xyCoords[intDirection, 1]);
+					if (xyCoords[intDirection, 0]!=0){
+						anim.setFacing(xyCoords[intDirection, 0]);
+					} else {
+						anim.setFacing(xyCoords[intDirection, 1]);
+					}
 			 } else if (transform.position == pos){
-				 anim.SetBool ("is_walking", false);
+				 anim.setWalking(false);
 			 }
 		 }
 
@@ -110,7 +112,7 @@ public class PlayerMovement : MonoBehaviour {
 
 		 if(oldPos!=pos && Vector3.Distance(transform.position, pos) == 0.0f) {
 			 if (strDirection.Equals("") || !Input.GetButton(strDirection)){
-			 	anim.SetBool ("is_walking", false);
+			 	anim.setWalking(false);
 			 }
 			 positionWatcher.updatePosition();
 			 oldPos = pos;
@@ -131,18 +133,8 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void updateFacing(){
-		anim.SetFloat("input_x", 0);
-		anim.SetFloat("input_y", 0);
-		//face character based on facing var
-		if (facing == 1 || facing == -1){
-			anim.SetFloat("input_x", facing);
-		}
-		if (facing == 2 || facing == -2) {
-			anim.SetFloat("input_y", facing);
-		}
+		anim.setFacing(facing);
 	}
-
-
 
 
 }

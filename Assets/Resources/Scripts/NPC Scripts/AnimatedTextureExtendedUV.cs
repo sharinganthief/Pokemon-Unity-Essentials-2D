@@ -32,7 +32,7 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 	}
 
 	//Update
-	void Update () {
+	void LateUpdate () {
 	  SetSpriteAnimation();
 	}
 
@@ -46,15 +46,19 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 		// split into horizontal and vertical index
 
 		if (is_walking) {
-			if (updateCount>30){
+			if (updateCount%10==0){
+				Debug.Log(updateCount);
 				hIndex+=1;
 				hIndex = hIndex % colCount;
-				updateCount = 0;
-			} else {
-				updateCount++;
 			}
+
+			updateCount++;
 		} else {
-			hIndex = 0;
+			if (hIndex==2){
+				hIndex = 2;
+			} else {
+				hIndex = 0;
+			}
 			updateCount = 0;
 		}
 

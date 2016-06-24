@@ -19,7 +19,8 @@ public enum TerrainType {
   TALLGRASS				,
   UNDERWATERGRASS	,
   ICE							,
-  SOOTGRASS
+  SOOTGRASS       ,
+  CAVE
 }
 
 public class TerrainTagChecker : MonoBehaviour {

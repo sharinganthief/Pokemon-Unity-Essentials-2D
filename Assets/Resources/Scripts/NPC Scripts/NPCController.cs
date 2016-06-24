@@ -32,4 +32,5 @@ public class NPCController : MonoBehaviour {
 	public void setFacing(int p_direction){
 		facing = p_direction;
 	}
+
 }

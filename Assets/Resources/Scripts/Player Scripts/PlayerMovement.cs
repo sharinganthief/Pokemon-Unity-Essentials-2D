@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour {
 							movingTimes[i] = 0.0f;
 						}
 					}
-					if ( movingTimes[intDirection] > 0.1f ) {
+					if ( movingTimes[intDirection] > 0.1f) {
 						if (PassabilityCheck.canPass(rbody, movingVectors[intDirection], distance)){
 							pos += movingVectors[intDirection];
 							anim.setWalking(true);
@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour {
 			 }
 		 }
 
-		 transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
+		 transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime);    // Move there
 
 
 		 if(oldPos!=pos && Vector3.Distance(transform.position, pos) == 0.0f) {

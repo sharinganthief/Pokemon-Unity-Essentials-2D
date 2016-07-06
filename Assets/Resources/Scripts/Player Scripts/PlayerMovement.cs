@@ -5,10 +5,10 @@ public class PlayerMovement : MonoBehaviour {
 
 	Vector3 pos;
 	Vector3 oldPos;                        // For movement
-	float speed = 1.0f;                         // Speed of movement
-	float distance = 0.32f;
+	float speed = 1.2f;                         // Speed of movement
+	float distance = 0.3072f;
 	private Rigidbody2D rbody;
-	public NPCController anim;
+	public AnimatedTextureExtendedUV anim;
 
 
 	private float[] movingTimes = {0.0f, 0.0f, 0.0f, 0.0f};
@@ -88,8 +88,9 @@ public class PlayerMovement : MonoBehaviour {
 					}
 					if ( movingTimes[intDirection] > 0.1f) {
 						if (PassabilityCheck.canPass(rbody, movingVectors[intDirection], distance)){
-							pos += movingVectors[intDirection];
 							anim.setWalking(true);
+							StartCoroutine(anim.UpdateSpriteAnimation());
+							pos += movingVectors[intDirection];
 						} else {
 							anim.setWalking(false);
 							AudioController.playSE("bump.mp3");
@@ -107,7 +108,7 @@ public class PlayerMovement : MonoBehaviour {
 			 }
 		 }
 
-		 transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime);    // Move there
+		 transform.position = Vector3.MoveTowards(transform.position, pos, speed*Time.deltaTime);    // Move there
 
 
 		 if(oldPos!=pos && Vector3.Distance(transform.position, pos) == 0.0f) {

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 056645d1e1b98b148b0d78203ae48902
-timeCreated: 1463724866
+timeCreated: 1467772291
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,6 +14,12 @@ TextureImporter:
     21300014: trchar003_7
     21300016: trchar003_8
     21300018: trchar003_9
+    21300020: trchar003_10
+    21300022: trchar003_11
+    21300024: trchar003_12
+    21300026: trchar003_13
+    21300028: trchar003_14
+    21300030: trchar003_15
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,7 +59,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 96
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -64,98 +70,158 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 144
-        width: 128
-        height: 42
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar003_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 98
-        width: 30
-        height: 40
+        x: 32
+        y: 144
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar003_2
       rect:
         serializedVersion: 2
-        x: 34
-        y: 98
-        width: 30
-        height: 38
+        x: 64
+        y: 144
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar003_3
       rect:
         serializedVersion: 2
-        x: 66
-        y: 98
-        width: 30
-        height: 40
+        x: 96
+        y: 144
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar003_4
       rect:
         serializedVersion: 2
-        x: 98
-        y: 98
-        width: 30
-        height: 38
+        x: 0
+        y: 96
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar003_5
       rect:
         serializedVersion: 2
-        x: 2
-        y: 50
-        width: 28
-        height: 40
+        x: 32
+        y: 96
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar003_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 50
-        width: 30
-        height: 38
+        x: 64
+        y: 96
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar003_7
       rect:
         serializedVersion: 2
-        x: 66
-        y: 50
-        width: 28
-        height: 40
+        x: 96
+        y: 96
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar003_8
       rect:
         serializedVersion: 2
-        x: 96
-        y: 50
-        width: 30
-        height: 38
+        x: 0
+        y: 48
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar003_9
       rect:
         serializedVersion: 2
+        x: 32
+        y: 48
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar003_10
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar003_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar003_12
+      rect:
+        serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 42
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar003_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar003_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: trchar003_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -92,7 +92,10 @@ public class AudioController : MonoBehaviour {
 			audioSourceSE.volume = volume;
 			audioSourceSE.loop = loop;
 			audioSourceSE.pitch = pitch;
+
 			audioSourceSE.Play();
+      Debug.Log(audioSourceSE.clip);
+
 		}
 		else if (audioType.ToLower().Equals("bgm")){
 			tempObjectBGM = new GameObject ();
@@ -104,6 +107,7 @@ public class AudioController : MonoBehaviour {
 			audioSourceBGM.loop = loop;
 			audioSourceBGM.pitch = pitch;
 			audioSourceBGM.Play();
+        Debug.Log(audioSourceBGM.clip);
 		}
 		else if (audioType.ToLower().Equals("bgs")){
 			tempObjectBGS = new GameObject ();

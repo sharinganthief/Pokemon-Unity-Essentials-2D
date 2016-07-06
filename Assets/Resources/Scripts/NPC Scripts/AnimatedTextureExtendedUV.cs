@@ -9,7 +9,7 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
   private Sprite[] sprites;
   private SpriteRenderer sr;
   private string[] names;
-	private NPCController controller;
+	private PlayerMovement playerMovement;
 	private SpriteRenderer spRend;
 	private Sprite sprite;
 	private int hIndex = 0;
@@ -17,9 +17,12 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 	private string charName;
 	private int updateCount = 0;
 
+	private int facing;
+	private bool is_walking;
+
 
 	void Start(){
-		controller = GetComponent<NPCController> ();
+		playerMovement = GetComponent<PlayerMovement> ();
 		sprites = Resources.LoadAll <Sprite> ("Graphics/Characters/"+sheetname);
 
     sr = GetComponent<SpriteRenderer> ();
@@ -31,49 +34,38 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
     }
 	}
 
-	//Update
-	void LateUpdate () {
-	  SetSpriteAnimation();
-	}
 
 	//SetSpriteAnimation
-	void SetSpriteAnimation(){
-
-		int facing = controller.getFacing();
-		bool is_walking = controller.getWalking();
-
-
+	public IEnumerator UpdateSpriteAnimation(){
 		// split into horizontal and vertical index
 
-		if (is_walking) {
-			if (updateCount%10==0){
-				Debug.Log(updateCount);
-				hIndex+=1;
-				hIndex = hIndex % colCount;
-			}
+		int newIndex;
+		int counter = 0;
 
-			updateCount++;
-		} else {
-			if (hIndex==2){
-				hIndex = 2;
-			} else {
+		for (int i = 0; i<2; i++){
+			hIndex += 1;
+			counter+=1;
+
+			if (hIndex>3)
 				hIndex = 0;
+
+			if (facing==1){
+					vIndex = 3;
+			} else if (facing == -1){
+					vIndex = 0;
+			} else if (facing == 2){
+					vIndex = 2;
+			} else if (facing == -2){
+					vIndex = 1;
 			}
-			updateCount = 0;
+
+			//calculate new index
+			newIndex = (4*vIndex + hIndex);
+			ChangeSprite(newIndex);
+			yield return new WaitForSeconds(1f/8f);
 		}
 
-		if (facing==1){
-				vIndex = 3;
-		} else if (facing == -1){
-				vIndex = 0;
-		} else if (facing == 2){
-				vIndex = 2;
-		} else if (facing == -2){
-				vIndex = 1;
-		}
-
-		//calculate new index
-		int newIndex = (4*vIndex + hIndex);
+		newIndex = (4*vIndex + hIndex);
 		ChangeSprite(newIndex);
 	}
 
@@ -86,4 +78,24 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
   {
        sr.sprite = sprites[System.Array.IndexOf(names, name)];
   }
+
+	public void setWalking(bool p_is_walking){
+		is_walking = p_is_walking;
+	}
+
+	public void setFacing(int p_direction){
+		facing = p_direction;
+		if (facing==1){
+				vIndex = 3;
+		} else if (facing == -1){
+				vIndex = 0;
+		} else if (facing == 2){
+				vIndex = 2;
+		} else if (facing == -2){
+				vIndex = 1;
+		}
+		int newIndex = (4*vIndex + hIndex);
+		ChangeSprite(newIndex);
+	}
+
 }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 61e8983dbf697ee43bdb37ff104b3254
-timeCreated: 1463724953
+timeCreated: 1467772270
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -59,7 +59,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: .5, y: .5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 96
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
@@ -68,80 +68,80 @@ TextureImporter:
     - name: trchar001_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 146
-        width: 28
-        height: 38
+        x: 0
+        y: 144
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_1
       rect:
         serializedVersion: 2
-        x: 34
+        x: 32
         y: 144
-        width: 28
-        height: 38
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_2
       rect:
         serializedVersion: 2
-        x: 66
-        y: 146
-        width: 28
-        height: 38
+        x: 64
+        y: 144
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_3
       rect:
         serializedVersion: 2
-        x: 98
+        x: 96
         y: 144
-        width: 28
-        height: 38
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_4
       rect:
         serializedVersion: 2
-        x: 2
-        y: 98
-        width: 30
-        height: 38
+        x: 0
+        y: 96
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_5
       rect:
         serializedVersion: 2
-        x: 34
-        y: 98
-        width: 30
-        height: 36
+        x: 32
+        y: 96
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_6
       rect:
         serializedVersion: 2
-        x: 66
-        y: 98
-        width: 30
-        height: 38
+        x: 64
+        y: 96
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_7
       rect:
         serializedVersion: 2
-        x: 98
-        y: 98
-        width: 30
-        height: 36
+        x: 96
+        y: 96
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,9 +149,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 50
-        width: 30
-        height: 38
+        y: 48
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,9 +159,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 50
-        width: 30
-        height: 36
+        y: 48
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,9 +169,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 50
-        width: 30
-        height: 38
+        y: 48
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,49 +179,49 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 50
-        width: 30
-        height: 36
+        y: 48
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_12
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 28
-        height: 38
+        x: 0
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_13
       rect:
         serializedVersion: 2
-        x: 34
+        x: 32
         y: 0
-        width: 28
-        height: 38
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_14
       rect:
         serializedVersion: 2
-        x: 66
-        y: 2
-        width: 28
-        height: 38
+        x: 64
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: trchar001_15
       rect:
         serializedVersion: 2
-        x: 98
+        x: 96
         y: 0
-        width: 28
-        height: 38
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

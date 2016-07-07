@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UIManager
   - MessageSystem
+  - Event
   layers:
   - Default
   - TransparentFX

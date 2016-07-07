@@ -4,11 +4,11 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour {
 
 	Vector3 pos;
-	Vector3 oldPos;                        // For movement
-	float speed = 1.2f;                         // Speed of movement
-	float distance = 0.3072f;
+	Vector3 oldPos;
+	float speed = 1.2f;                   	// Speed of movement
+	float distance = 0.307355f;								//Distance between tiles, don't change this value
 	private Rigidbody2D rbody;
-	public AnimatedTextureExtendedUV anim;
+	public AnimatedTextureExtendedUV anim;	//animates the player using the charset
 
 
 	private float[] movingTimes = {0.0f, 0.0f, 0.0f, 0.0f};
@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour {
 		rbody = GetComponent<Rigidbody2D> ();
 		positionWatcher = GetComponent<MapPositionWatcher>();
 
+		//used to choose the movement destination
 		movingVectors = new Vector3[4] {
 			new Vector3(0.0f, distance, 0.0f),
 			new Vector3(-1*distance, 0.0f, 0.0f),
@@ -86,7 +87,9 @@ public class PlayerMovement : MonoBehaviour {
 							movingTimes[i] = 0.0f;
 						}
 					}
+					//must be pressing down the directional button a bit to move, to distinguish between turning and walking
 					if ( movingTimes[intDirection] > 0.1f) {
+						//check if the destination will have
 						if (PassabilityCheck.canPass(rbody, movingVectors[intDirection], distance)){
 							anim.setWalking(true);
 							StartCoroutine(anim.UpdateSpriteAnimation());
@@ -135,6 +138,10 @@ public class PlayerMovement : MonoBehaviour {
 
 	void updateFacing(){
 		anim.setFacing(facing);
+	}
+
+	public void setSpeed(float p_speed){
+		speed = p_speed;
 	}
 
 

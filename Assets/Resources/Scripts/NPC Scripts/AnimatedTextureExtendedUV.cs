@@ -39,7 +39,6 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 	public IEnumerator UpdateSpriteAnimation(){
 		// split into horizontal and vertical index
 
-		int newIndex;
 		int counter = 0;
 
 		for (int i = 0; i<2; i++){
@@ -59,14 +58,10 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 					vIndex = 1;
 			}
 
-			//calculate new index
-			newIndex = (4*vIndex + hIndex);
-			ChangeSprite(newIndex);
+			ChangeSprite(4*vIndex + hIndex);
 			yield return new WaitForSeconds(1f/8f);
 		}
-
-		newIndex = (4*vIndex + hIndex);
-		ChangeSprite(newIndex);
+		ChangeSprite(4*vIndex + hIndex);
 	}
 
 	void ChangeSprite( int index )
@@ -94,8 +89,7 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 		} else if (facing == -2){
 				vIndex = 1;
 		}
-		int newIndex = (4*vIndex + hIndex);
-		ChangeSprite(newIndex);
+		ChangeSprite(4*vIndex + hIndex);
 	}
 
 }

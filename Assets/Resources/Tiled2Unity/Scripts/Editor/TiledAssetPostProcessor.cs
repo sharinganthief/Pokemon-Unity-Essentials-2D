@@ -148,11 +148,7 @@ namespace Tiled2Unity
 
                 // No shadows
                 mr.receiveShadows = false;
-#if T2U_USE_LEGACY_IMPORTER
-                mr.castShadows = false;
-#else
                 mr.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-#endif
 
                 // No probes
                 mr.useLightProbes = false;

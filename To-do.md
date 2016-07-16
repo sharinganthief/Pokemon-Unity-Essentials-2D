@@ -19,7 +19,7 @@ Subject to likely change the way things are handled
     - [ ] Running
     - [ ] Surfing
 
-  - [x] Passability and Terrain
+  - [ ] Passability and Terrain
     - [x] Basic check for colliders
     - [ ] Water
     - [ ] Soot Grass
@@ -100,15 +100,3 @@ Subject to likely change the way things are handled
 
 
 
-
-
-
-
-Haven't started:
-Pause Menu
-Other player animations (running, surfing, bike)
-Battle System (hardest part)
-Other scenes (bag, party, etc)
-Reading/writing pokemon data, and then using that data in game
-Same for the bag
-Way more than I want to list

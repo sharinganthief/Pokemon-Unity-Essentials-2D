@@ -12,18 +12,27 @@ Subject to likely change the way things are handled
     - [x] Basic maps
     - [x] Basic Connectivity
     - [ ] Moving to maps on different scenes (and back) [Don't work on this yet, the main concern is how all the peripheral things are handled upon transfer]
+  
+  - [ ] Animations
+    - [ ] Sink into grass
+    - [ ] Trainer exclamation
+    - [ ] Grass rustle
+    - [ ] Dust cloud after player jumps
 
   - [ ] Player Movement (basic movement)
     - [x] Grid based movement (movement distance near perfect.  Do more testing when more maps are added to check)
     - [x] Walking
     - [ ] Running
     - [ ] Surfing
+    - [ ] Bike
+    - [ ] Jumping
 
   - [ ] Passability and Terrain
     - [x] Basic check for colliders
     - [ ] Water
     - [ ] Soot Grass
     - [ ] Ice
+    - [ ] Ledges
   
   - [ ] Priority
     - [x] Assign different groups of tiles to different layers
@@ -45,6 +54,7 @@ Subject to likely change the way things are handled
     - [ ] Allow Bike
     - [ ] Bike Only
     - [ ]  Encounters (a "map" will have it's own encounters, but individual tile layers will also have encounters that can override the maps, if desired)
+    - [ ] Sloped Maps
 
   - [ ] Automatically add Metadata script when importing map from Tiled (might have done this, can't remember)
   - [ ] Editors for the XML files
@@ -63,7 +73,6 @@ Subject to likely change the way things are handled
   - [ ] Trainers
 
 * General Utilies During Runtime
-
   - [x] A watcher that determines when map changes are made
     - [ ] Metadata changes implemented upon map change
   - [ ] Some sort of player settings

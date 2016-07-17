@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 7/6/2016 7:04:49 PM-->
+<!--Last exported: 7/16/2016 11:01:08 PM-->
 <Tiled2Unity version="1.0.5.1">
   <AssignMaterial mesh="mesh_0001" material="Paths and Grass" />
   <AssignMaterial mesh="mesh_0002" material="Paths and Grass" />
@@ -26,6 +26,19 @@
     </GameObject>
     <GameObject name="Trees Bottom - 2" x="0" y="0">
       <GameObject name="Trees" copy="mesh_0003" sortingLayerName="" sortingOrder="2" opacity="1" />
+      <GameObject name="Collision">
+        <PolygonCollider2D>
+          <Path>4.9152,-0.6144 9.8304,-0.6144 9.8304,-0.3072 4.9152,-0.3072</Path>
+          <Path>0,-0.6144 4.3008,-0.6144 4.3008,-0.3072 0,-0.3072</Path>
+          <Path>1.2288,-0.9216 0,-0.9216 0,-1.2288 1.2288,-1.2288</Path>
+          <Path>1.2288,-1.536 0,-1.536 0,-1.8432 1.2288,-1.8432</Path>
+          <Path>1.2288,-2.1504 0,-2.1504 0,-2.4576 1.2288,-2.4576</Path>
+          <Path>1.2288,-3.9936 0,-3.9936 0,-4.3008 1.2288,-4.3008</Path>
+          <Path>1.2288,-4.608 0,-4.608 0,-4.9152 1.2288,-4.9152</Path>
+          <Path>1.2288,-5.2224 0,-5.2224 0,-5.5296 1.2288,-5.5296</Path>
+          <Path>1.2288,-5.8368 0,-5.8368 0,-6.144 1.2288,-6.144</Path>
+        </PolygonCollider2D>
+      </GameObject>
     </GameObject>
     <GameObject name="House Bottom -2 " x="0" y="0">
       <GameObject name="Buildings and Houses" copy="mesh_0004" sortingLayerName="" sortingOrder="3" opacity="1" />
@@ -63,10 +76,25 @@
       <GameObject name="Sea[700-800]" copy="mesh_0012" sortingLayerName="" sortingOrder="4" opacity="1">
         <TileAnimator startTimeMs="700" durationMs="100" fullTimeMs="800" />
       </GameObject>
+      <Property name="Terrain_Type" value="WATER" />
     </GameObject>
     <GameObject name="Player - 3" x="0" y="0" />
     <GameObject name="Trees Top - 4" x="0" y="0">
       <GameObject name="Trees" copy="mesh_0013" sortingLayerName="" sortingOrder="6" opacity="1" />
+      <GameObject name="Collision">
+        <PolygonCollider2D>
+          <Path>6.144,-6.4512 9.8304,-6.4512 9.8304,0 4.9152,0 4.9152,-0.3072 7.3728,-0.3072 7.3728,-6.144 6.144,-6.144</Path>
+          <Path>0,-0.3072 4.3008,-0.3072 4.3008,0 0,0</Path>
+          <Path>1.2288,-0.6144 0,-0.6144 0,-0.9216 1.2288,-0.9216</Path>
+          <Path>1.2288,-1.2288 0,-1.2288 0,-1.536 1.2288,-1.536</Path>
+          <Path>1.2288,-1.8432 0,-1.8432 0,-2.1504 1.2288,-2.1504</Path>
+          <Path>1.2288,-3.6864 0,-3.6864 0,-3.9936 1.2288,-3.9936</Path>
+          <Path>1.2288,-4.3008 0,-4.3008 0,-4.608 1.2288,-4.608</Path>
+          <Path>1.2288,-4.9152 0,-4.9152 0,-5.2224 1.2288,-5.2224</Path>
+          <Path>1.2288,-5.5296 0,-5.5296 0,-5.8368 1.2288,-5.8368</Path>
+          <Path>2.4576,-6.144 0,-6.144 0,-6.4512 2.4576,-6.4512</Path>
+        </PolygonCollider2D>
+      </GameObject>
     </GameObject>
     <GameObject name="House Top -5" x="0" y="0">
       <GameObject name="Buildings and Houses" copy="mesh_0014" sortingLayerName="" sortingOrder="7" opacity="1" />

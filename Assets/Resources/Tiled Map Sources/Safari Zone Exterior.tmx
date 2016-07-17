@@ -1,62 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="22" height="21" tilewidth="32" tileheight="32" nextobjectid="1">
- <tileset firstgid="1" name="Buildings and Houses" tilewidth="32" tileheight="32" tilecount="2048">
-  <image source="../Tilesets/Buildings and Houses.png" width="256" height="8192"/>
-  <tile id="272">
-   <objectgroup draworder="index">
-    <object id="0" x="3" y="-3" width="45" height="39"/>
-   </objectgroup>
-  </tile>
-  <tile id="274">
-   <objectgroup draworder="index">
-    <object id="0" x="1" y="1" width="30" height="29"/>
-   </objectgroup>
-  </tile>
- </tileset>
- <tileset firstgid="2049" name="Paths and Grass" tilewidth="32" tileheight="32" tilecount="2048">
-  <image source="../Tilesets/Paths and Grass.png" width="256" height="8192"/>
-  <tile id="6">
-   <objectgroup draworder="index">
-    <object id="0" x="0.545455" y="0.545455" width="30.5455" height="30.5455"/>
-   </objectgroup>
-  </tile>
- </tileset>
- <tileset firstgid="4097" name="Trees" tilewidth="32" tileheight="32" tilecount="2048">
-  <image source="../Tilesets/Trees.png" width="256" height="8192"/>
- </tileset>
+ <tileset firstgid="1" source="Paths and Grass.tsx"/>
+ <tileset firstgid="2049" source="Trees.tsx"/>
+ <tileset firstgid="4097" source="Buildings and Houses.tsx"/>
  <layer name="Base" width="22" height="21">
   <data encoding="base64" compression="zlib">
-   eJxj42BgYAJiZiBmAWI2ND4rmWLUMGPU3FFzR80dNXfU3FFzB5u5AHL3FWs=
+   eJxjY2BgYAJiZiBmAWI2ND4rmWLUMGPU3FFzR80dNXfU3FFzB5u5AEU7Bvs=
   </data>
  </layer>
  <layer name="Trees - Below" width="22" height="21">
   <data encoding="base64" compression="zlib">
-   eJztlDsOgDAMQ8tn4VPEAvc/Kl68RA1JqjIgsGRZVtLqLW3eU9rgbKQmbb+De3iAx0JnapJ7zAme4QVeC52pifO38cq0eA/4vLmX8yivV1Fer8jNbMUr1YpX6qu80ffmlTxv8Vr/HFOet3hru8Vb23/eZ3kvXUIecA==
+   eJzllEsKgDAMROtnYdWNv97/qM4mm8GYBuJCOvAoQ1N5SGmeUprBAlaQla5F9vlcB3owgPGhy6pF5vmc5idd1tZ9L1Beviv7Xt/aeH1rs2F2Bwc4A305Ub6cVn2/ug/e+6t1a87yre1RvpZ/lC+/f1G+/P797f/eLu8TjA==
   </data>
  </layer>
  <layer name="Grass" width="22" height="21">
+  <properties>
+   <property name="Terrain_Type" value="GRASS"/>
+  </properties>
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUDBbAzkE7c2GYVubiw4PF3FEwCqgBAAPgAWk=
+   eJxjYBgFo2AUDBbATkNzYZhW5uLDg8XcUTAKqAEA49MAqQ==
   </data>
  </layer>
  <layer name="Paths" width="22" height="21">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo4A8sIiDgWExEC/hGNnmrgKatxqI11DZ3FEwCkbB4AQAGSQIHQ==
+   eJxjYBgFo4A8sAiIFwPxkhFu7iogXg3Ea6hs7igYBaNgcAIAbeYHvQ==
   </data>
  </layer>
  <layer name="House Below" width="22" height="21">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2DwgJPMDAyngPg0EJ8B4rNAfI55oF01CkbBKBgFCAAAYNwE2A==
+   eJxjYBgFwxmcFGZgOAXEp4H4DBCfBeJzwgPtqlEwCkbBKBi6AACx1wU4
   </data>
  </layer>
  <layer name="House-Above" width="22" height="21">
   <data encoding="base64" compression="zlib">
-   eJztzMENgCAUBNGf0H8BIBQiKomg1uUcLIADiRx2k3fcMeubd2YBC+Inuc6zur91VxoZG3YcKAO6J42Khgs3ngFdTdO02fcCQn4bqA==
+   eJztzMsNgCAURNHXA9WDUogfSBS0Lu7CAli8lZmbnOWM2VwxmCUsWD85TI5/9LvxsePAiYLq8HvxcaOh48Hr8KuUUsq3AT6jFh4=
   </data>
  </layer>
  <layer name="Trees-Above" width="22" height="21">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjAIIYBVgYGATQNCDxR246FEwCgYCAAA5JQEu
+   eJxjYBgFo2AUjAIIYOVgYGDjQNCDxR246FEwCgYCAAAI5gC+
   </data>
  </layer>
 </map>

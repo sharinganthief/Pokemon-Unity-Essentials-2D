@@ -7,7 +7,7 @@ public class DayNightSpriteShader : MonoBehaviour {
 
 	private void Awake()
 	{
-			// If supported in the sahder set our opacity
+			// If supported in the shader set our opacity
 			// (Keep opacity at 1.0 to avoid copying the material)
 			SpriteRenderer meshRendrer = this.gameObject.GetComponent<SpriteRenderer>();
 			curMapName = CheckCurrentMetadata.getCurMap();

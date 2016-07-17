@@ -7,25 +7,25 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 	public int colCount = 4;
 	public string sheetname;
   private Sprite[] sprites;
-  private SpriteRenderer sr;
   private string[] names;
-	private PlayerMovement playerMovement;
 	private SpriteRenderer spRend;
 	private Sprite sprite;
 	private int hIndex = 0;
 	private int vIndex = 0;
 	private string charName;
 	private int updateCount = 0;
+	private Transform spTransform;
+	public bool isGamePlayer = false;
 
 	private int facing;
 	private bool is_walking;
 
 
 	void Start(){
-		playerMovement = GetComponent<PlayerMovement> ();
 		sprites = Resources.LoadAll <Sprite> ("Graphics/Characters/"+sheetname);
 
-    sr = GetComponent<SpriteRenderer> ();
+    spRend = GetComponent<SpriteRenderer>();
+		spTransform = GetComponent<Transform>();
     names = new string[sprites.Length];
 
     for(int i = 0; i < names.Length; i++)
@@ -66,12 +66,12 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 
 	void ChangeSprite( int index )
   {
-       sr.sprite = sprites[index];
+       spRend.sprite = sprites[index];
   }
 
   void ChangeSpriteByName( string name )
   {
-       sr.sprite = sprites[System.Array.IndexOf(names, name)];
+       spRend.sprite = sprites[System.Array.IndexOf(names, name)];
   }
 
 	public void setWalking(bool p_is_walking){

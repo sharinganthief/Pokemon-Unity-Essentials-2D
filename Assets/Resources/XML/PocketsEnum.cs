@@ -23,8 +23,9 @@ public enum PBPockets {
 };
 
 
+
 //Get name of pocket
-public class PocketsEnum{
+public class PocketsEnum {
   public static string GetEnumDescription(PBPockets value)
   {
       System.Reflection.FieldInfo fi = value.GetType().GetField(value.ToString());

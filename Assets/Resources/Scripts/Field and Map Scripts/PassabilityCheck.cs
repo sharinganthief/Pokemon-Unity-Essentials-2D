@@ -17,7 +17,7 @@ public class PassabilityCheck : MonoBehaviour {
 			if (hit.distance <= distance){
 				if (hit.collider.gameObject.GetComponent<TerrainTagChecker>() != null) {
 					TerrainType type = hit.collider.gameObject.GetComponent<TerrainTagChecker>().getTerrainType();
-					//Debug.Log(type);
+					Debug.Log(type);
 				} else if (hit.distance <= distance){
 					return false;
 				}

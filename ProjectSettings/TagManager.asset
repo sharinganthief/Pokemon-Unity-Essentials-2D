@@ -44,3 +44,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Lower Tiles
+    uniqueID: 363812115
+    locked: 0
+  - name: Events 1
+    uniqueID: 873362335
+    locked: 0
+  - name: Middle Tiles
+    uniqueID: 3629381851
+    locked: 0
+  - name: Events 2
+    uniqueID: 2229108223
+    locked: 0
+  - name: Upper Tiles
+    uniqueID: 511478035
+    locked: 0

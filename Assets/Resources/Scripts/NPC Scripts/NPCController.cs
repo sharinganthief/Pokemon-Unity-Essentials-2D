@@ -17,19 +17,19 @@ public class NPCController : MonoBehaviour {
 
 	}
 
-	public int getFacing(){
+	public int getFacing() {
 		return facing;
 	}
 
-	public bool getWalking(){
+	public bool getWalking() {
 		return is_walking;
 	}
 
-	public void setWalking(bool p_is_walking){
+	public void setWalking(bool p_is_walking) {
 		is_walking = p_is_walking;
 	}
 
-	public void setFacing(int p_direction){
+	public void setFacing(int p_direction) {
 		facing = p_direction;
 	}
 

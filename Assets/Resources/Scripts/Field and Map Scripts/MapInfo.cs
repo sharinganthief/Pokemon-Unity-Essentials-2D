@@ -11,7 +11,7 @@ public class MapInfo {
 	float height;
 
 
-	public MapInfo(GameObject p_object, float p_x, float p_y, float p_width, float p_height){
+	public MapInfo(GameObject p_object, float p_x, float p_y, float p_width, float p_height) {
 		objectMap = p_object;
 		x = p_x;
 		y = p_y;
@@ -35,11 +35,11 @@ public class MapInfo {
 		return height;
 	}
 
-	public string getName(){
+	public string getName() {
 		return objectMap.name;
 	}
 
-	public GameObject getObjectMap(){
+	public GameObject getObjectMap() {
 		return objectMap;
 	}
 

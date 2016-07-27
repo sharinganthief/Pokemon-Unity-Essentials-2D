@@ -13,7 +13,7 @@ public class Warp : MonoBehaviour {
 		  other.gameObject.transform.position = warpTarget.position;
       Camera.main.transform.position = warpTarget.position + new Vector3(0,0, -10);
 			PlayerMovement playerUpdate = player.GetComponent<PlayerMovement> ();
-			if (playerUpdate){
+			if (playerUpdate) {
 				playerUpdate.setTransferred(true, setDirection);
 			}
   }

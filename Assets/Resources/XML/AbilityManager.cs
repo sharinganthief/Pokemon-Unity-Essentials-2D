@@ -10,7 +10,7 @@ public struct Ability {
   public string name;
   public string description;
 
-  public Ability(string p_internalName, string p_name, string p_description){
+  public Ability(string p_internalName, string p_name, string p_description) {
     internalName = p_internalName;
     name = p_name;
     description = p_description;
@@ -23,21 +23,21 @@ public class AbilityManager : MonoBehaviour {
   public static List<Ability> abilityList = new List<Ability>();
 
 
-  public static void addAbility(string p_internalName, string p_name, string p_description){
+  public static void addAbility(string p_internalName, string p_name, string p_description) {
     abilityList.Add(new Ability(p_internalName, p_name, p_description));
   }
 
-  public static void clearList(){
+  public static void clearList() {
     abilityList.Clear();
   }
 
-  public static void printEachDesc(){
-    foreach(Ability ability in abilityList){
+  public static void printEachDesc() {
+    foreach(Ability ability in abilityList) {
       Debug.Log(ability.description);
     }
   }
 
-  public static void saveDataFile(){
+  public static void saveDataFile() {
     using (Stream stream = File.Open("Assets/Resources/Data/Abilities", FileMode.Create))
     {
         var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
@@ -46,7 +46,7 @@ public class AbilityManager : MonoBehaviour {
         string tempInternalName;
         string tempName;
         string tempDesc;
-        foreach(Ability ability in abilityList){
+        foreach(Ability ability in abilityList) {
           tempInternalName = System.Convert.ToBase64String( System.Text.Encoding.UTF8.GetBytes(ability.internalName));
           tempName = System.Convert.ToBase64String( System.Text.Encoding.UTF8.GetBytes(ability.name));
           tempDesc = System.Convert.ToBase64String( System.Text.Encoding.UTF8.GetBytes(ability.description));
@@ -56,7 +56,7 @@ public class AbilityManager : MonoBehaviour {
     }
   }
 
-  public static void loadDataFile(){
+  public static void loadDataFile() {
     AbilityManager.clearList();
     List<Ability> tempAbilityList;
     using (Stream stream = File.Open("Assets/Resources/Data/Abilities", FileMode.Open))
@@ -69,7 +69,7 @@ public class AbilityManager : MonoBehaviour {
     string tempInternalName;
     string tempName;
     string tempDesc;
-    foreach(Ability ability in tempAbilityList){
+    foreach(Ability ability in tempAbilityList) {
       tempInternalName = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(ability.internalName));
       tempName = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(ability.name));
       tempDesc = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(ability.description));

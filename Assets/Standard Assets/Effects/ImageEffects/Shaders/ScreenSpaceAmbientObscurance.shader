@@ -109,7 +109,7 @@ Shader "Hidden/ScreenSpaceAmbientObscurance"
 
 	/** Returns a unit vector and a screen-space _Radius for the tap on a unit disk (the caller should scale by the actual disk _Radius) */
 
-	float2 TapLocation(int sampleNumber, float spinAngle, out float ssR){
+	float2 TapLocation(int sampleNumber, float spinAngle, out float ssR) {
 		// Radius relative to ssR
 		float alpha = float(sampleNumber + 0.5) * (1.0 / NUM_SAMPLES);
 		float angle = alpha * (NUM_SPIRAL_TURNS * 6.28) + spinAngle;

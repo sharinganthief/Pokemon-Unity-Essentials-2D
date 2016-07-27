@@ -19,16 +19,16 @@ public class FadeImageInOut : MonoBehaviour {
 	// Update is called once per frame
 	public void startFadeInOut () {
 		Color c = image.color;
-		if (fading){
+		if (fading) {
     	c.a -= 0.1f;
 		} else {
 			c.a += 0.05f;
 		}
-		if (c.a <= 0.0f){
+		if (c.a <= 0.0f) {
 			fading = false;
 			c.a = 0.0f;
 		}
-		if (c.a >= 1.0f){
+		if (c.a >= 1.0f) {
 			fading = true;
 			c.a = 1.0f;
 		}
@@ -43,8 +43,8 @@ public class FadeImageInOut : MonoBehaviour {
 		CancelInvoke("fadeImageInOut");
 	}
 
-	void Update(){
-		if (Input.GetKey(KeyCode.Space)){
+	void Update() {
+		if (Input.GetKey(KeyCode.Space)) {
 			Application.LoadLevel("MainMap");
 		}
 	}

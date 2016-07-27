@@ -21,13 +21,13 @@ public class MetadataSettings : MonoBehaviour {
 
 	// Use this for initialization
 	void OnEnable () {
-		if (bgmSource != null){
+		if (bgmSource != null) {
 			addBGMPlayer();
 		}
 	}
 
 	//make new game object and attatch a BGM player, the attach to the parent
-	void addBGMPlayer(){
+	void addBGMPlayer() {
 		UnityEngine.GameObject bgmPlayer = new UnityEngine.GameObject("BGM Player");
 		bgmPlayer.AddComponent<BGM_Player>();
 		bgmPlayer.GetComponent<BGM_Player>().bgmSource = bgmSource;
@@ -38,13 +38,13 @@ public class MetadataSettings : MonoBehaviour {
 
 
 
-	void OnDisable(){
+	void OnDisable() {
 		removeBGMPlayer();
 	}
 
-	void removeBGMPlayer(){
-		foreach (Transform child in transform){
-			if (child.gameObject.name.Equals("BGM Player")){
+	void removeBGMPlayer() {
+		foreach (Transform child in transform) {
+			if (child.gameObject.name.Equals("BGM Player")) {
 				Destroy(child.gameObject.GetComponent<BGM_Player>());
 				Destroy(child.gameObject);
 			}

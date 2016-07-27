@@ -1,0 +1,34 @@
+<Moves>
+
+  <Move>
+    <InternalName>MEGAHORN</InternalName>
+    <Name>Megahorn</Name>
+    <MoveEffectType>NONE</MoveEffectType>
+    <BaseDamage>120</BaseDamage>
+    <MoveType>BUG</MoveType>
+    <MoveCategory>PHYSICAL</MoveCategory>
+    <Accuracy>85</Accuracy>
+    <BasePP>10</BasePP>
+    <AdditionalEffectChance>0</AdditionalEffectChance>
+    <TargetType>SINGLESELECTEDOPPONENT</TargetType>
+    <Priority>0</Priority>
+    <Flags>
+      <MakesContact>true</MakesContact>
+      <BlockedByProtect>true</BlockedByProtect>
+      <BlockedByMagicBounce>false</BlockedByMagicBounce>
+      <CanBeSnatched>false</CanBeSnatched>
+      <CanBeCopied>true</CanBeCopied>
+      <AffectedByKingsRock>true</AffectedByKingsRock>
+      <ThawsUser>false</ThawsUser>
+      <HighCritChance>false</HighCritChance>
+      <BitingMove>false</BitingMove>
+      <PunchingMove>false</PunchingMove>
+      <SoundBasedMove>false</SoundBasedMove>
+      <PowderBasedMove>false</PowderBasedMove>
+      <PulseBasedMove>false</PulseBasedMove>
+      <BombBasedMove>false</BombBasedMove>
+    </Flags>
+    <MoveDescription>Using its tough and impressive horn, the user rams into the target with no letup.</MoveDescription>
+  </Move>
+
+</Moves>

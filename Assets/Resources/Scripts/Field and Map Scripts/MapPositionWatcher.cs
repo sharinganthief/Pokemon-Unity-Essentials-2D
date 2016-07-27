@@ -16,8 +16,8 @@ public class MapPositionWatcher : MonoBehaviour {
 
 	void Awake () {
 		 GameObject[] tempObjects = Object.FindObjectsOfType<GameObject>() ;
-		 foreach (GameObject go in tempObjects){
-			 if (go.activeInHierarchy && go.GetComponent<Tiled2Unity.TiledMap>() != null){
+		 foreach (GameObject go in tempObjects) {
+			 if (go.activeInHierarchy && go.GetComponent<Tiled2Unity.TiledMap>() != null) {
 				 loadedMaps.Add(new MapInfo(go, go.transform.position.x, go.transform.position.y,
 				 				go.GetComponent<Tiled2Unity.TiledMap>().GetMapWidthInPixelsScaled(), go.GetComponent<Tiled2Unity.TiledMap>().GetMapHeightInPixelsScaled()));
 			 }
@@ -27,10 +27,10 @@ public class MapPositionWatcher : MonoBehaviour {
 
 	// Update is called once per frame
 	public void updatePosition() {
-		foreach (MapInfo map in loadedMaps){
-			if (gameObject.transform.position.x >= map.getX() && gameObject.transform.position.x < (map.getX() + map.getWidth())){
-				if (gameObject.transform.position.y <= map.getY() && gameObject.transform.position.y > (map.getY() - map.getHeight())){
-					if (map != curMap){
+		foreach (MapInfo map in loadedMaps) {
+			if (gameObject.transform.position.x >= map.getX() && gameObject.transform.position.x < (map.getX() + map.getWidth())) {
+				if (gameObject.transform.position.y <= map.getY() && gameObject.transform.position.y > (map.getY() - map.getHeight())) {
+					if (map != curMap) {
 						if (curMap != null) {
 							curMap.getObjectMap().GetComponent<MetadataSettings>().enabled = false;
 						}
@@ -44,7 +44,7 @@ public class MapPositionWatcher : MonoBehaviour {
 		}
 	}
 
-	public MapInfo currentMap(){
+	public MapInfo currentMap() {
 		return curMap;
 	}
 

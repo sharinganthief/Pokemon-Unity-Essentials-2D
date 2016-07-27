@@ -13,7 +13,7 @@ public class BGM_Player : MonoBehaviour {
 	[Range(-3.0f,3.0f)]
 	public float pitch = 1.0f;
 
-	public BGM_Player (AudioClip p_bgmSource, float p_volume, float p_pitch = 1.0f){
+	public BGM_Player (AudioClip p_bgmSource, float p_volume, float p_pitch = 1.0f) {
 		bgmSource = p_bgmSource;
 		volume = p_volume;
 		pitch = p_pitch;

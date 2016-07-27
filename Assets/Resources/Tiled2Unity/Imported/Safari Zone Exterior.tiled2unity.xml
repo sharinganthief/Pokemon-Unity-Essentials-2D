@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 7/16/2016 11:01:18 PM-->
+<!--Last exported: 7/26/2016 10:16:47 PM-->
 <Tiled2Unity version="1.0.5.1">
   <AssignMaterial mesh="mesh_0001" material="Paths and Grass" />
   <AssignMaterial mesh="mesh_0002" material="Trees" />
@@ -25,6 +25,11 @@
     </GameObject>
     <GameObject name="Grass" x="0" y="0">
       <GameObject name="Paths and Grass" copy="mesh_0003" sortingLayerName="" sortingOrder="2" opacity="1" />
+      <GameObject name="Collision">
+        <PolygonCollider2D>
+          <Path>2.7648,-3.072 2.4576,-3.072 2.4576,-4.3008 5.5296,-4.3008 5.5296,-3.6864 3.3792,-3.6864 3.3792,-3.3792 2.7648,-3.3792</Path>
+        </PolygonCollider2D>
+      </GameObject>
       <Property name="Terrain_Type" value="GRASS" />
     </GameObject>
     <GameObject name="Paths" x="0" y="0">

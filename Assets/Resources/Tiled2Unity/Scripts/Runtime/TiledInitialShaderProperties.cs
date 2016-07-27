@@ -27,14 +27,14 @@ namespace Tiled2Unity
             InvokeRepeating("updateShading", 0.0f, 60.0f);
         }
 
-        private void updateShading(){
+        private void updateShading() {
           MeshRenderer meshRendrer = this.gameObject.GetComponent<MeshRenderer>();
           Color dayNightColor = DayNightShading.getCurrentShading();
           meshRendrer.material.SetColor("_Color", dayNightColor);
         }
 
-        private void Update(){
-          if (curMapName != CheckCurrentMetadata.getCurMap()){
+        private void Update() {
+          if (curMapName != CheckCurrentMetadata.getCurMap()) {
             curMapName = CheckCurrentMetadata.getCurMap();
             updateShading();
           }

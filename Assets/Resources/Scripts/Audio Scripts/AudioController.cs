@@ -34,33 +34,33 @@ public class AudioController : MonoBehaviour {
 
 	//runs through all specified directories looking for the specified files types
 	//serves for quicker checking for existence of audio files
-	static void createAudioList(){
+	static void createAudioList() {
 		System.IO.FileInfo[] info;
 		listsCreated = true;
-		foreach (string ext in extensionsAllowed){
+		foreach (string ext in extensionsAllowed) {
 			info = dirSE.GetFiles(ext);
-			if (info.Length>0){
+			if (info.Length>0) {
 				foreach (System.IO.FileInfo f in info) {
 					audioSEFiles.Add(f);
 				}
 			}
 
 			info = dirBGM.GetFiles(ext);
-			if (info.Length>0){
+			if (info.Length>0) {
 				foreach (System.IO.FileInfo f in info) {
 					audioBGMFiles.Add(f);
 				}
 			}
 
 			info = dirCries.GetFiles(ext);
-			if (info.Length>0){
+			if (info.Length>0) {
 				foreach (System.IO.FileInfo f in info) {
 					audioCryFiles.Add(f);
 				}
 			}
 
 			info = dirBGS.GetFiles(ext);
-			if (info.Length>0){
+			if (info.Length>0) {
 				foreach (System.IO.FileInfo f in info) {
 					audioBGSFiles.Add(f);
 				}
@@ -83,7 +83,7 @@ public class AudioController : MonoBehaviour {
 	//path expected starting in Resources
 	//audioType expected to be "se", "bgm", "bgs", or "cry"
 	static IEnumerator playAudio(string filename, string audioType, float volume = 1.0f, bool loop = false, float pitch = 1.0f) {
-		if (audioType.ToLower().Equals("se")){
+		if (audioType.ToLower().Equals("se")) {
 			tempObjectSE = new GameObject ();
 			tempObjectSE.AddComponent<AudioSource> ();
 			audioSourceSE  = tempObjectSE.GetComponent<AudioSource> ();
@@ -96,7 +96,7 @@ public class AudioController : MonoBehaviour {
 			audioSourceSE.Play();
 
 		}
-		else if (audioType.ToLower().Equals("bgm")){
+		else if (audioType.ToLower().Equals("bgm")) {
 			tempObjectBGM = new GameObject ();
 			tempObjectBGM.AddComponent<AudioSource> ();
 			audioSourceBGM  = tempObjectBGM.GetComponent<AudioSource> ();
@@ -107,7 +107,7 @@ public class AudioController : MonoBehaviour {
 			audioSourceBGM.pitch = pitch;
 			audioSourceBGM.Play();
 		}
-		else if (audioType.ToLower().Equals("bgs")){
+		else if (audioType.ToLower().Equals("bgs")) {
 			tempObjectBGS = new GameObject ();
 			tempObjectBGS.AddComponent<AudioSource> ();
 			audioSourceBGS  = tempObjectBGS.GetComponent<AudioSource> ();
@@ -118,7 +118,7 @@ public class AudioController : MonoBehaviour {
 			audioSourceBGS.pitch = pitch;
 			audioSourceBGS.Play();
 		}
-		else if (audioType.ToLower().Equals("cry")){
+		else if (audioType.ToLower().Equals("cry")) {
 			tempObjectCry = new GameObject ();
 			tempObjectCry.AddComponent<AudioSource> ();
 			audioSourceCry  = tempObjectCry.GetComponent<AudioSource> ();
@@ -138,32 +138,32 @@ public class AudioController : MonoBehaviour {
 
 
 
-	public static void playSE(string filename, float volume = 1.0f){
-		if (!listsCreated){
+	public static void playSE(string filename, float volume = 1.0f) {
+		if (!listsCreated) {
 			AudioController.createAudioList();
 		}
-		if (audioSourceSE!=null && audioSourceSE.isPlaying){
+		if (audioSourceSE!=null && audioSourceSE.isPlaying) {
 			return;
 		} else {
 			Destroy(audioSourceSE);
 			Destroy(tempObjectSE);
 		}
-		if (volume<0.0f){
+		if (volume<0.0f) {
 			Debug.Log("Volume must be greater than or equal to 0.0");
 			volume = 1.0f;
-		} else if (volume>1.0f){
+		} else if (volume>1.0f) {
 			Debug.Log("Volume must be less than or equal to 1.0");
 			volume = 1.0f;
 		}
 		//check for the exact filename (with specified extension)
-		if (audioSEFiles.Exists(x => x.Name==filename)){
+		if (audioSEFiles.Exists(x => x.Name==filename)) {
 			StaticCoroutine.DoCoroutine(AudioController.playAudio(filename, "se", volume));
 		}
 		//if the filename doesn't have an extension, check each extension
 		else if (filename == System.IO.Path.GetFileNameWithoutExtension(filename)) {
-			foreach (string ext in extensionsAllowed){
+			foreach (string ext in extensionsAllowed) {
 				//Remove function used to remove the * character needed in searching directories
-				if (audioSEFiles.Exists(x => x.Name==(filename+(ext.Remove(0, 1))))){
+				if (audioSEFiles.Exists(x => x.Name==(filename+(ext.Remove(0, 1))))) {
 
 					StaticCoroutine.DoCoroutine(AudioController.playAudio(filename, "se", volume));
 					return;
@@ -177,32 +177,32 @@ public class AudioController : MonoBehaviour {
 
 	}
 
-	public static void playBGM(string filename, float volume = 1.0f, float pitch = 1.0f){
-		if (!listsCreated){
+	public static void playBGM(string filename, float volume = 1.0f, float pitch = 1.0f) {
+		if (!listsCreated) {
 			AudioController.createAudioList();
 		}
-		if (audioSourceBGM!=null && audioSourceBGM.isPlaying){
+		if (audioSourceBGM!=null && audioSourceBGM.isPlaying) {
 			return;
 		} else {
 			Destroy(audioSourceBGM);
 			Destroy(tempObjectBGM);
 		}
-		if (volume<0.0f){
+		if (volume<0.0f) {
 			Debug.Log("Volume must be greater than or equal to 0.0");
 			volume = 1.0f;
-		} else if (volume>1.0f){
+		} else if (volume>1.0f) {
 			Debug.Log("Volume must be less than or equal to 1.0");
 			volume = 1.0f;
 		}
 		//check for the exact filename (with specified extension)
-		if (audioBGMFiles.Exists(x => x.Name==filename)){
+		if (audioBGMFiles.Exists(x => x.Name==filename)) {
 			StaticCoroutine.DoCoroutine(AudioController.playAudio(filename, "bgm", volume, true, pitch));
 		}
 		//if the filename doesn't have an extension, check each extension
 		else if (filename == System.IO.Path.GetFileNameWithoutExtension(filename)) {
-			foreach (string ext in extensionsAllowed){
+			foreach (string ext in extensionsAllowed) {
 				//Remove function used to remove the * character needed in searching directories
-				if (audioBGMFiles.Exists(x => x.Name==(filename+(ext.Remove(0, 1))))){
+				if (audioBGMFiles.Exists(x => x.Name==(filename+(ext.Remove(0, 1))))) {
 					StaticCoroutine.DoCoroutine(AudioController.playAudio(filename, "bgm", volume, true, pitch));
 					return;
 				}
@@ -216,23 +216,23 @@ public class AudioController : MonoBehaviour {
 	}
 
 	//type expected to be "se", "bgm", "bgs", or "cry"
-	public static void fadeOutSound(string type, float seconds = 1.0f){
+	public static void fadeOutSound(string type, float seconds = 1.0f) {
 
 	}
 
-	public static void changeVolumeSE(){
+	public static void changeVolumeSE() {
 
 	}
 
-	public static void changeVolumeBG(){
-		if (audioSourceBGM==null || !audioSourceBGM.isPlaying){
+	public static void changeVolumeBG() {
+		if (audioSourceBGM==null || !audioSourceBGM.isPlaying) {
 			//CancelInvoke("changeVolumeBG");
 			return;
 		}
 	}
 
-	public static void stopBGM(){
-		if (audioSourceBGM==null){
+	public static void stopBGM() {
+		if (audioSourceBGM==null) {
 			return;
 		}
 		audioSourceBGM.Stop();

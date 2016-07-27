@@ -20,22 +20,22 @@ public class DisplayText : MonoBehaviour {
 	private Text displayText;
 	private GameObject textObj;
 
-	void Start(){
+	void Start() {
 
 		Image[] tempImages = GetComponentsInChildren<Image>(true);
-		foreach (Image image in tempImages){
-			if (image.name.Equals("Message Base")){
+		foreach (Image image in tempImages) {
+			if (image.name.Equals("Message Base")) {
 				textBG = image;
 				textBG.enabled = true;
 			}
-			if (image.name.Equals("Message Skin")){
+			if (image.name.Equals("Message Skin")) {
 				textBox = image;
 				textBox.enabled = true;
 			}
 		}
 
 		foreach (Transform child in transform) {
-			if (child.name.Equals("Text")){
+			if (child.name.Equals("Text")) {
 			 	textObj = child.gameObject;
 			}
 		}
@@ -51,7 +51,7 @@ public class DisplayText : MonoBehaviour {
 			textBG.rectTransform.anchoredPosition = new Vector3(-26 , 152 , 0);
 			textObj.GetComponent<RectTransform>().anchoredPosition = new Vector3(-45, 120, 0);
 			textObj.GetComponent<RectTransform>().sizeDelta = new Vector2(945, 128);
-		} else if ((Screen.width/(float)Screen.height).Equals(16/9.0f)){
+		} else if ((Screen.width/(float)Screen.height).Equals(16/9.0f)) {
 			textBox.rectTransform.anchoredPosition = new Vector3(-10 , 82 , 0);
 			textBG.rectTransform.anchoredPosition = new Vector3(-7 , 82 , 0);
 			textObj.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 128, 0);
@@ -59,8 +59,8 @@ public class DisplayText : MonoBehaviour {
 		}
 	}
 
-	void Update(){
-		if (Input.GetKey(KeyCode.Space) && !isTyping && !finishedTyping){
+	void Update() {
+		if (Input.GetKey(KeyCode.Space) && !isTyping && !finishedTyping) {
 			isTyping = true;
 			InvokeRepeating("TypeText", 0.0f, letterPause);
 		}
@@ -90,7 +90,7 @@ public class DisplayText : MonoBehaviour {
 				displayText.horizontalOverflow = HorizontalWrapMode.Wrap;
 				displayText.verticalOverflow = VerticalWrapMode.Truncate;
 				displayText.lineSpacing = 1.75f;
-			} else if ((Screen.width/(float)Screen.height).Equals(16/9.0f)){
+			} else if ((Screen.width/(float)Screen.height).Equals(16/9.0f)) {
 				displayText.supportRichText = true;
 				displayText.fontSize = 42;
 				displayText.horizontalOverflow = HorizontalWrapMode.Wrap;
@@ -104,7 +104,7 @@ public class DisplayText : MonoBehaviour {
 			char[] tempWords = words.ToCharArray();
 			currentSentence+= tempWords[curChar];
 			curChar++;
-			if (curChar>=tempWords.Length){
+			if (curChar>=tempWords.Length) {
 				isTyping = false;
 				curChar = 0;
 				finishedTyping = true;

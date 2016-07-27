@@ -21,7 +21,7 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 	private bool is_walking;
 
 
-	void Start(){
+	void Start() {
 		sprites = Resources.LoadAll <Sprite> ("Graphics/Characters/"+sheetname);
 
     spRend = GetComponent<SpriteRenderer>();
@@ -36,25 +36,25 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
 
 
 	//SetSpriteAnimation
-	public IEnumerator UpdateSpriteAnimation(){
+	public IEnumerator UpdateSpriteAnimation() {
 		// split into horizontal and vertical index
 
 		int counter = 0;
 
-		for (int i = 0; i<2; i++){
+		for (int i = 0; i<2; i++) {
 			hIndex += 1;
 			counter+=1;
 
 			if (hIndex>3)
 				hIndex = 0;
 
-			if (facing==1){
+			if (facing==1) {
 					vIndex = 3;
-			} else if (facing == -1){
+			} else if (facing == -1) {
 					vIndex = 0;
-			} else if (facing == 2){
+			} else if (facing == 2) {
 					vIndex = 2;
-			} else if (facing == -2){
+			} else if (facing == -2) {
 					vIndex = 1;
 			}
 
@@ -74,19 +74,19 @@ public class AnimatedTextureExtendedUV : MonoBehaviour
        spRend.sprite = sprites[System.Array.IndexOf(names, name)];
   }
 
-	public void setWalking(bool p_is_walking){
+	public void setWalking(bool p_is_walking) {
 		is_walking = p_is_walking;
 	}
 
-	public void setFacing(int p_direction){
+	public void setFacing(int p_direction) {
 		facing = p_direction;
-		if (facing==1){
+		if (facing==1) {
 				vIndex = 3;
-		} else if (facing == -1){
+		} else if (facing == -1) {
 				vIndex = 0;
-		} else if (facing == 2){
+		} else if (facing == 2) {
 				vIndex = 2;
-		} else if (facing == -2){
+		} else if (facing == -2) {
 				vIndex = 1;
 		}
 		ChangeSprite(4*vIndex + hIndex);

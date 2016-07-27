@@ -12,29 +12,29 @@ public class FontManager : MonoBehaviour {
 	public static bool noFontsAvailable = false;
 
 
-	public static void startFontManager(){
+	public static void startFontManager() {
 		Object[] tempFonts = (Resources.LoadAll("Fonts", typeof(Font)));
-		foreach (Object obj in tempFonts){
+		foreach (Object obj in tempFonts) {
 			fontNames.Add(((Font)obj).fontNames[0]);
 			fonts.Add(obj.name);
 		}
 
-		if (fontNames.Count == 0){
+		if (fontNames.Count == 0) {
 			noFontsAvailable = true;
 		}
 	}
 
-	public static bool hasFont(string fontName){
-		if (noFontsAvailable){
+	public static bool hasFont(string fontName) {
+		if (noFontsAvailable) {
 			return false;
 		}
-		if (fontNames.Count == 0){
+		if (fontNames.Count == 0) {
 			startFontManager();
 		}
 		return fontNames.IndexOf(fontName) != -1;
 	}
 
-	public static Font getFont(string fontName){
+	public static Font getFont(string fontName) {
 		return Resources.Load("Fonts/" + fonts[fontNames.IndexOf(fontName)]) as Font;
 	}
 

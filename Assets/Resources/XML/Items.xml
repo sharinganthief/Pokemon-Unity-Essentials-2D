@@ -7,11 +7,11 @@
     <Bag>ITEMS</Bag>  <!-- Which bag section the item will go in for the player  -->
     <Price>350</Price>  <!-- Price stores generally sell this item at  -->
     <Description>An item that prevents weak wild Pokémon from appearing for 100 steps after its use.</Description>  <!-- Visible description for your item.  No restrictions  -->
-    <InFieldUseMethod>REPEL</InFieldUseMethod> <!-- For other items, this will be assumed to be the same name as the item's internal name, this is an example.  You can use a different item's internal name here to make it have the same effect  -->
-    <ItemUsageTypeInField>SINGLEUSEBYPLAYER</ItemUsageTypeInField>  <!-- Refer to the enum ItemUsageInField for each allowed types and description.  -->
+    <InFieldUseMethod>REPEL</InFieldUseMethod> <!-- For other items, this will default to be the same name as the item's internal name, this is an example.  You can use a different item's internal name here to make it have the same effect  -->
+    <ItemUsageTypeInField>SINGLEUSEBYPLAYER</ItemUsageTypeInField>  <!-- Refer to the enum ItemUsageInField for each allowed types and description.  Note that NONE is the default, it's not necessary to specify if so. -->
     <InBattleUseMethod>REPEL</InBattleUseMethod> <!-- This is the same usage as InFieldUseMethod.  Note that field and battle methods are by the same name but in different classes.  Repel does not have in battle usage, but we can still have this here -->
-    <ItemUsageTypeInField>NONE</ItemUsageTypeInField>  <!-- Refer to the enum ItemUsageDuringBattle for each allowed types and description.  -->
-    <SpecialItemType>NONE</SpecialItemType> <!-- Refer to the enum ItemSpecialTypes for allowed types and descriptions. -->
+    <ItemUsageTypeInField>NONE</ItemUsageTypeInField>  <!-- Refer to the enum ItemUsageDuringBattle for each allowed types and description.  Note that NONE is the default, it's not necessary to specify.  -->
+    <SpecialItemType>NONE</SpecialItemType> <!-- Refer to the enum ItemSpecialTypes for allowed types and descriptions. Note that NONE is the default, it's not necessary to specify. -->
     <!-- <MachineMove>THUNDERBOLT</MachineMove>   Use this field for TMs/HMs to specify which move they teach.  Uses internal names from Moves.xml-->
   </Item>
 

@@ -30,12 +30,13 @@ public class TerrainTagChecker : MonoBehaviour {
 
   public TerrainType curTerrainType;
 
-  void Start(){
+  void Start() {
     CompileXMLFiles.compileAbilities();
     CompileXMLFiles.compileTypes();
+    CompileXMLFiles.compileMoves();
   }
 
-  public TerrainType getTerrainType(){
+  public TerrainType getTerrainType() {
     return curTerrainType;
   }
 

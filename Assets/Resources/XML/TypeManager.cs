@@ -34,21 +34,21 @@ public class TypeManager : MonoBehaviour {
     typeList.Add(new Types(p_internalName, p_name, p_isSpecialType, p_weaknesses, p_resistances, p_immunitiies));
   }
 
-  public static void clearList(){
+  public static void clearList() {
     typeList.Clear();
   }
 
-  public static void printEachTypeName(){
-    foreach(Types ability in typeList){
+  public static void printEachTypeName() {
+    foreach(Types ability in typeList) {
       Debug.Log(ability.name);
     }
   }
 
-  public static int getNumTypes(){
+  public static int getNumTypes() {
     return typeList.Count;
   }
 
-  public static void saveDataFile(){
+  public static void saveDataFile() {
     using (Stream stream = File.Open("Assets/Resources/Data/Type", FileMode.Create))
     {
         var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
@@ -59,7 +59,7 @@ public class TypeManager : MonoBehaviour {
         List<string> tempWeaknesses;
         List<string> tempResistances;
         List<string> tempImmunities;
-        foreach(Types ability in typeList){
+        foreach(Types ability in typeList) {
 
           tempInternalName = System.Convert.ToBase64String( System.Text.Encoding.UTF8.GetBytes(ability.internalName));
           tempName = System.Convert.ToBase64String( System.Text.Encoding.UTF8.GetBytes(ability.name));
@@ -68,15 +68,15 @@ public class TypeManager : MonoBehaviour {
           tempResistances = new List<string>();
           tempImmunities = new List<string>();
 
-          foreach(string weakness in ability.weaknesses){
+          foreach(string weakness in ability.weaknesses) {
             tempWeaknesses.Add(System.Convert.ToBase64String( System.Text.Encoding.UTF8.GetBytes(weakness)));
           }
 
-          foreach(string resistance in ability.resistances){
+          foreach(string resistance in ability.resistances) {
             tempResistances.Add(System.Convert.ToBase64String( System.Text.Encoding.UTF8.GetBytes(resistance)));
           }
 
-          foreach(string immunity in ability.immunitiies){
+          foreach(string immunity in ability.immunitiies) {
             tempImmunities.Add(System.Convert.ToBase64String( System.Text.Encoding.UTF8.GetBytes(immunity)));
           }
 
@@ -86,7 +86,7 @@ public class TypeManager : MonoBehaviour {
     }
   }
 
-  public static void loadDataFile(){
+  public static void loadDataFile() {
     TypeManager.clearList();
     List<Types> tempAbilityList;
     using (Stream stream = File.Open("Assets/Resources/Data/Type", FileMode.Open))
@@ -102,7 +102,7 @@ public class TypeManager : MonoBehaviour {
     List<string> tempResistances;
     List<string> tempImmunities;
 
-    foreach(Types ability in tempAbilityList){
+    foreach(Types ability in tempAbilityList) {
       tempInternalName = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(ability.internalName));
       tempName = System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(ability.name));
 
@@ -110,15 +110,15 @@ public class TypeManager : MonoBehaviour {
       tempResistances = new List<string>();
       tempImmunities = new List<string>();
 
-      foreach(string weakness in ability.weaknesses){
+      foreach(string weakness in ability.weaknesses) {
         tempWeaknesses.Add(System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(weakness)));
       }
 
-      foreach(string resistance in ability.resistances){
+      foreach(string resistance in ability.resistances) {
         tempResistances.Add(System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(resistance)));
       }
 
-      foreach(string immunity in ability.immunitiies){
+      foreach(string immunity in ability.immunitiies) {
         tempImmunities.Add(System.Text.Encoding.UTF8.GetString(System.Convert.FromBase64String(immunity)));
       }
 

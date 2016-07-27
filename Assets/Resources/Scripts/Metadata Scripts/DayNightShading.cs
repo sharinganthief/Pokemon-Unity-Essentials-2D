@@ -44,10 +44,10 @@ public class DayNightShading : MonoBehaviour {
 
 	// Update is called once per frame
 	public static Color getCurrentShading () {
-		if (!hasInitializedTones){
+		if (!hasInitializedTones) {
 			DayNightShading.initializeTones();
 		}
-		if (CheckCurrentMetadata.isIndoorMap()){
+		if (CheckCurrentMetadata.isIndoorMap()) {
 			return new Color(1,1,1,1);
 		}
 		int hour = TimeFunctions.getHour();

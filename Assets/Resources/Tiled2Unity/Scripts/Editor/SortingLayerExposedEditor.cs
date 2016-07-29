@@ -64,11 +64,8 @@ public class SortingLayerExposedEditor : UnityEditor.Editor
 
         foreach (string layerName in GetSortingLayerNames())
         {
-            if (!layerName.Equals("Default")) {
-              contexts.Add(new GUIContent(layerName));
-            }
+            contexts.Add(new GUIContent(layerName));
         }
-        contexts.Add(new GUIContent("Default"));
 
         contexts.Add(GUIContent.none);
         contexts.Add(new GUIContent("Edit Layers..."));

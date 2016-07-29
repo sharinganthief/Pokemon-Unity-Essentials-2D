@@ -5,39 +5,58 @@
  <tileset firstgid="2049" source="Trees.tsx"/>
  <tileset firstgid="4097" source="Buildings and Houses.tsx"/>
  <layer name="Base" width="22" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Lower Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjY2BgYAJiZiBmAWI2ND4rmWLUMGPU3FFzR80dNXfU3FFzB5u5AEU7Bvs=
   </data>
  </layer>
  <layer name="Trees - Below" width="22" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Lower Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzllEsKgDAMROtnYdWNv97/qM4mm8GYBuJCOvAoQ1N5SGmeUprBAlaQla5F9vlcB3owgPGhy6pF5vmc5idd1tZ9L1Beviv7Xt/aeH1rs2F2Bwc4A305Ub6cVn2/ug/e+6t1a87yre1RvpZ/lC+/f1G+/P797f/eLu8TjA==
   </data>
  </layer>
  <layer name="Grass" width="22" height="21">
   <properties>
-   <property name="Terrain_Type" value="GRASS"/>
+   <property name="terrainType" value="GRASS"/>
+   <property name="unity:sortingLayerName" value="Lower Tiles"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUDBbATkNzYZhW5uLDg8XcUTAKqAEA49MAqQ==
   </data>
  </layer>
  <layer name="Paths" width="22" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Lower Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo4A8sAiIFwPxkhFu7iogXg3Ea6hs7igYBaNgcAIAbeYHvQ==
   </data>
  </layer>
  <layer name="House Below" width="22" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Lower Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFwxmcFGZgOAXEp4H4DBCfBeJzwgPtqlEwCkbBKBi6AACx1wU4
   </data>
  </layer>
  <layer name="House-Above" width="22" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Upper Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzMsNgCAURNHXA9WDUogfSBS0Lu7CAli8lZmbnOWM2VwxmCUsWD85TI5/9LvxsePAiYLq8HvxcaOh48Hr8KuUUsq3AT6jFh4=
   </data>
  </layer>
  <layer name="Trees-Above" width="22" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Upper Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjAIIYOVgYGDjQNCDxR246FEwCgYCAAAI5gC+
   </data>

@@ -82,6 +82,16 @@ namespace Tiled2Unity
             return Path.GetFullPath(elem.Attribute(attrName).Value);
         }
 
+        public static object GetAttributeAsEnum(string attrName, Type enumType)
+        {
+            object value = Enum.Parse(enumType, attrName);
+
+            if (value!=null) {
+              return Convert.ChangeType(value, enumType);
+            }
+            return null;
+        }
+
         public static void ReadyToWrite(string path)
         {
             // Creates directories in path if they don't exist

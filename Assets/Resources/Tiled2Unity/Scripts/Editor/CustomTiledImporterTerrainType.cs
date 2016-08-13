@@ -22,9 +22,9 @@ namespace Tiled2Unity
 
                 gameObject.AddComponent<TerrainTagChecker>();
                 gameObject.GetComponent<TerrainTagChecker>().curTerrainType = terrainType;
-                Debug.Log(gameObject.GetComponent<TerrainTagChecker>());
               }
           }
+
 
       }
 

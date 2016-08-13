@@ -117,6 +117,7 @@ namespace Tiled2Unity
 
                     // Set the sorting order
                     renderer.sortingOrder = ImportUtils.GetAttributeAsInt(goXml, "sortingOrder", 0);
+                    Debug.Log(name + " " + renderer.sortingLayerName);
                 }
                 else
                 {
@@ -169,7 +170,7 @@ namespace Tiled2Unity
                 localRotation.z = -ImportUtils.GetAttributeAsFloat(goXml, "rotation", 0);
                 child.transform.eulerAngles = localRotation;
 
-                
+
             }
         }
 

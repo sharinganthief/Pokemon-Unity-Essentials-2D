@@ -5,18 +5,11 @@ using System.Collections.Generic;
 public class AudioController : MonoBehaviour {
 
 	//path to Audio folders folder
-	public static string audioPath = "Assets/Resources/";
+	public static string audioPath = "./Assets/Resources/";
 	public static string audioSEPathShort = "Audio/SE/";
 	public static string audioBGMPathShort = "Audio/BGM/";
 	public static string audioBGSPathShort = "Audio/BGS/";
 	public static string audioCryPathShort = "Audio/Cries/";
-
-	//directories of the audio files
-	public static System.IO.DirectoryInfo dirSE = new System.IO.DirectoryInfo(audioPath+audioSEPathShort);
-	public static System.IO.DirectoryInfo dirBGM = new System.IO.DirectoryInfo(audioPath+audioBGMPathShort);
-	public static System.IO.DirectoryInfo dirBGS = new System.IO.DirectoryInfo(audioPath+audioBGSPathShort);
-	public static System.IO.DirectoryInfo dirCries = new System.IO.DirectoryInfo(audioPath+audioCryPathShort);
-
 
 	//will contain a list of all desired Audio files
   public static List<System.IO.FileInfo> audioSEFiles = new List<System.IO.FileInfo> ();
@@ -35,34 +28,34 @@ public class AudioController : MonoBehaviour {
 	//runs through all specified directories looking for the specified files types
 	//serves for quicker checking for existence of audio files
 	static void createAudioList() {
-		System.IO.FileInfo[] info;
+		string[] info;
 		listsCreated = true;
 		foreach (string ext in extensionsAllowed) {
-			info = dirSE.GetFiles(ext);
+			info = System.IO.Directory.GetFiles(audioPath+audioSEPathShort, ext);
 			if (info.Length>0) {
-				foreach (System.IO.FileInfo f in info) {
-					audioSEFiles.Add(f);
+				foreach (string f in info) {
+					audioSEFiles.Add(new System.IO.FileInfo(f));
 				}
 			}
 
-			info = dirBGM.GetFiles(ext);
+			info = System.IO.Directory.GetFiles(audioPath+audioBGMPathShort, ext);
 			if (info.Length>0) {
-				foreach (System.IO.FileInfo f in info) {
-					audioBGMFiles.Add(f);
+				foreach (string f in info) {
+					audioBGMFiles.Add(new System.IO.FileInfo(f));
 				}
 			}
 
-			info = dirCries.GetFiles(ext);
+			info = System.IO.Directory.GetFiles(audioPath+audioBGSPathShort, ext);
 			if (info.Length>0) {
-				foreach (System.IO.FileInfo f in info) {
-					audioCryFiles.Add(f);
+				foreach (string f in info) {
+					audioCryFiles.Add(new System.IO.FileInfo(f));
 				}
 			}
 
-			info = dirBGS.GetFiles(ext);
+			info = System.IO.Directory.GetFiles(audioPath+audioCryPathShort, ext);
 			if (info.Length>0) {
-				foreach (System.IO.FileInfo f in info) {
-					audioBGSFiles.Add(f);
+				foreach (string f in info) {
+					audioBGSFiles.Add(new System.IO.FileInfo(f));
 				}
 			}
 		}

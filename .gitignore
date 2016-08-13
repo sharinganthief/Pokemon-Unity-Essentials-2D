@@ -70,3 +70,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Folders
+test_Data
+test.exe
+test_Data/level0

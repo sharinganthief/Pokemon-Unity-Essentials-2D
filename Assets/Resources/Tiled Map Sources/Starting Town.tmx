@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE map SYSTEM "http://mapeditor.org/dtd/1.0/map.dtd">
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="32" height="21" tilewidth="32" tileheight="32" nextobjectid="1">
- <tileset firstgid="1" source="Paths and Grass.tsx"/>
+ <tileset firstgid="1" name="Paths and Grass" tilewidth="32" tileheight="32" tilecount="2048" columns="8">
+  <image source="../Tilesets/Paths and Grass.png" width="256" height="8192"/>
+  <tile id="0">
+   <properties>
+    <property name="unity:sortingLayerName" value="Lower Tiles"/>
+   </properties>
+  </tile>
+  <tile id="6">
+   <objectgroup draworder="index">
+    <object id="3" x="4" y="4" width="24" height="24"/>
+   </objectgroup>
+  </tile>
+ </tileset>
  <tileset firstgid="2049" name="Buildings and Houses" tilewidth="32" tileheight="32" tilecount="2048" columns="8">
   <image source="../Tilesets/Buildings and Houses.png" width="256" height="8192"/>
   <tile id="8">
@@ -339,44 +351,58 @@
  <tileset firstgid="6145" source="Water and Ledges.tsx"/>
  <tileset firstgid="8193" source="Sea.tsx"/>
  <layer name="Base Grass - 1" width="32" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Lower Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzakRAAAIxMAbvv5L5qoAExETsyEpXbl24+LwXVr4+Pj4+Pj4+Pj//gLyRwpC
   </data>
  </layer>
  <layer name="Paths - 1" width="32" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Lower Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztVUEOwiAQ5GpbbdqqSbVJk6bq/3/ociBZTdmBBbzYTebEMsPAAMboqiEclXNz1JlwKcBrfVUBeBGeoKdW6FtffSYMSv0T4ebBzPhRn1Zfmsf3B/Xt+jr9q5Fz7/RRX4z+YYP/l/nvIrml7GvyP5rP++Xjd+OIO+X8JX40/i/6UvY1+Q/ld/dDyl8LPIToI6yExYNHgv4k+OLeSv1/qMavNUjncC+gb4u/VSU8onJvVQ6Pb01lFVk=
   </data>
  </layer>
  <layer name="Trees Bottom - 2" width="32" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Lower Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBhYwCjAwMAExMxAzALEgkAsRAQNA8SqJ2TOQAF0/480MNL9D0uHwkAsMgL9PwpGNhjp+X/U/6P+H8n+BwCGOQX4
   </data>
  </layer>
  <layer name="House Bottom -2 " width="32" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Lower Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzrkJACAAQ9G0NorX/nN6oGYEwUKRPPhdigAi8iJvgMAiSyybs53IT4oFKmuss8Emg7v9TER2LOSRB2M=
   </data>
  </layer>
  <layer name="Pond" width="32" height="21">
   <properties>
-   <property name="Terrain_Type" value="WATER"/>
+   <property name="terrainType" value="WATER"/>
+   <property name="unity:sortingLayerName" value="Lower Tiles"/>
   </properties>
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUjIJRMApGwSgYfMBQgYHBCIqNFehvvyfQTi8o9h61n6oAAIoqBkE=
   </data>
  </layer>
- <layer name="Player - 3" width="32" height="21">
-  <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20LL6AAAOBnCoAAAQ==
-  </data>
- </layer>
  <layer name="Trees Top - 4" width="32" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Upper Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJzjFGBg4AJiThJpGCBVHy5zaAUYgXYwCWDSzEDMguQObiDmoYF70P0Ls4dW9qEDXP4e9f+o/1noYP+o//H7nxWI2ZBoagNC/ucFYj4kmtpgsMf/SM//o/4fXP6ntDxA10+q/ykND/TyhJD/AfXNFkg=
   </data>
  </layer>
  <layer name="House Top -5" width="32" height="21">
+  <properties>
+   <property name="unity:sortingLayerName" value="Upper Tiles"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJztzekKglAQhuGpDDxp3v+ttVBa0Y7lUrZC7w0IHoxDwbzw/BvmE9F+tcwXyVGgxMVvd2fbnT8PPPHCu+Zv0zvbOkakix489E27O9sMfwYIEGJY87fpnfbdRpHIGBNMMcMcceRmP2FngSVWWGODraP9HTt7HHBEihPOjvYzdnIUKHFFhZujfU3T/rsPrkwwIQ==
   </data>
